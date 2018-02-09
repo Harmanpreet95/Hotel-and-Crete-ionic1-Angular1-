@@ -1,0 +1,49 @@
+<ion-view title="Messages" id="page8" hide-nav-bar="true">
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">Message</h1>
+   <a ui-sref="menu.groupHotel" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+  <ion-content padding="true" style="background: url(img/7y8dSgATsW3BbXTPd5cQ_Untitled-6.jpg) no-repeat center;background-size:cover;" class="has-header">
+    
+
+
+  <div ng-repeat= "Send in Sends"  class="msg_box" >
+  	<div ng-if = "Send.Chat.sender == 'rest_admin'" class="msg_text">
+ 	<p ng-if = "Send.Chat.msg != null"> {{Send.Chat.msg}}</p>
+        <span style="display : none;" class="item-note-msg" ng-if = "Send.Chat.msg == null"></span>
+    </div>
+  
+ <!-- 
+  	<div class="msg_text1">
+	<p></p>
+    	</div>
+ -->
+ <!-- 
+  	<div  class="msg_text">
+ 	<p>{{input.msg}}</p>
+    </div>
+ -->
+ 
+  	<div ng-if = "Send.Chat.sender == 'customer'"  class="msg_text1">
+	 <p ng-if = "Send.Chat.msg != null">{{Send.Chat.msg}}</p>
+        <span style="display : none;" class="item-note-msg" ng-if = "Send.Chat.msg == null"></span>
+    	</div>
+  </div>
+    </ion-content>
+  
+  <div class="bar bar-footer change_border">
+ <div class="text_write">
+<form id="home-form2" name="messages" class="list register_form" ng-submit="submitted && messages.$valid && message()" novalidate>
+    <input type="text" ng-model="input.msg" placeholder="Type a message...">
+
+  <button type="submit" class="button right_btn" ng-click="submitted=true">
+    Send
+  </button>
+  </form>
+   
+</div>
+</div>
+  
+  
+</ion-view>

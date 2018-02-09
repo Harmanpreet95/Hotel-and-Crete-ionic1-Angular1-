@@ -1,0 +1,176 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21">
+    <ion-header-bar class="bar-stable">
+      <div class="title">{{'Menu'|translate}}</div>
+    </ion-header-bar>
+    <ion-content padding="false" class="side-menu-left has-header ">
+      <ion-list id="menu-list1">
+        <ion-item class="item-icon-right positive" id="menu-list-item1" ui-sref="menu.groupHotel" menu-close=""><span class="home_left">{{'Home_page' | translate}}</span>
+          <i class="icon ion-android-home"></i>
+        </ion-item>
+       <!--  <ion-item ng-if="chat_id == '0'" id="menu-list-item3" ui-sref="menu.messages" menu-close="" style="">Messages<span style="   height: 23px;   width: 23px;  background: green !important;   z-index: 999;   position: absolute;    z-index: 999;    right: 20px;     border-radius: 50%;   top: 18px; color:#fff;       text-align: center;    font-size: 12px;" class="circle02">{{chatcnt}}</span></ion-item> -->
+        <!-- <ion-item ng-if="chat_id == undefined" id="menu-list-item3" ui-sref="menu.messages" menu-close="" style="">Messages</ion-item> -->
+<ion-item class="item-icon-right positive" id="menu-list-item4" ui-sref="menu.messages" menu-close="" ><span class="home_left">{{'Message' | translate}}<!-- {{unrdmsg}} --></span>
+          <i class="icon ion-android-drafts"></i>
+          <h4 class="msg_text2">{{unrdmsg}}</h4>
+        </ion-item>
+
+        <!-- <ion-item class="item-icon-right positive" id="menu-list-item4" ui-sref="menu.messages" menu-close="" style="" >Message<span style="color: red " class="home_left">zxdzxc<!-- {{unrdmsg}} --><!-- </span> --> 
+          <!-- <i class="icon ion-android-drafts"></i> -->
+        <!-- </ion-item> -->
+        <ion-item class="item-icon-right positive" id="menu-list-item5" ui-sref="menu.map" menu-close=""><span class="home_left">{{'Map' | translate }}</span>
+          <i class="icon ion-ios-location"></i>
+        </ion-item>
+        <ion-item class="item-icon-right positive" id="menu-list-item6" ui-sref="menu.weather" menu-close=""><span class="home_left">{{'Weather' | translate}}</span>
+          <i class="icon ion-ios-sunny size_increase"></i>
+        </ion-item>
+        <ion-item class="item-icon-right positive" id="menu-list-item7" ui-sref="menu.greekword" menu-close=""><span class="home_left">{{'Greek_Words'|translate}}</span>
+          <i class="icon ion-ios-book-outline"></i>
+        </ion-item>
+        <ion-item class="item-icon-right positive" id="menu-list-item8" ui-sref="menu.info" menu-close=""><span class="home_left">{{'Info'|translate}}</span>
+          <i class="icon ion-ios-information-outline"></i>
+        </ion-item>
+        <ion-item class="item-icon-right positive" id="menu-list-item2" ui-sref="menu.usefulnumber" menu-close=""><span class="home_left">{{'Useful_Tel'|translate}}</span>
+          <i class="icon ion-android-call"></i>
+        </ion-item>
+
+         <ion-item class="item-icon-right positive" id="menu-list-item2" style="overflow: unset;height: 56px;padding-left: 55px;">
+<!--             <div class="dropdown home_left">
+    <input class="dropdown-toggle" type="text" readonly="true">
+  <div class="dropdown-text" style="color:#19577e; ">{{'Change_Language'|translate}}</div>
+  <ul class="dropdown-content">
+    <li ng-click="setLang('Έλληνες')"><a>{{'Greek'|translate}}</a></li>
+     <li ng-click="setLang('English')"><a>{{'English'|translate}}</a></li>
+     <li ng-click="setLang('English')"><a>{{'English'|translate}}</a></li> 
+  </ul>
+</div>-->
+ <div class="dropdown-text" style="color:#19577e; ">{{'Change_Language'|translate}}</div>     
+ <select class="dropdown-toggle" ng-model="data.lang" ng-change="setLang(data.lang)">
+     <option  value="Έλληνες">{{'Greek'|translate}}</option>
+     <option  value="English">{{'English'|translate}}</option>
+     
+</select>          
+ <img src="img/language.png" style="width: 12%;position: absolute;left: 12px;top: 12px;">  
+      </ion-item>  
+  
+
+        <ion-item ng-if = "currentLanguage != 'Έλληνες'" class="item-icon-right positive" id="menu-list-item3" menu-close="" style="overflow: unset;height: 54px;z-index: 0;"><span class="home_left">Logout</span>
+          <i class="icon ion-log-out" ng-click="logout()"></i>
+        </ion-item>
+
+       <ion-item  ng-if = "currentLanguage == 'Έλληνες'" class="item-icon-right positive" id="menu-list-item3" menu-close="" style="overflow: unset;height: 54px;z-index: 0;"><span class="home_left">Αποσυνδέση</span>
+          <i class="icon ion-log-out" ng-click="logout_lang()"></i>
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>
+
+<style>
+  .dropdown-text.ng-binding{width:77%;}
+  .dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  height: 28px;
+}
+
+.dropdown-text {
+  cursor: pointer;
+  position: absolute;
+  line-height: 23px;
+  width: 100%;
+}
+
+.dropdown-text:after {
+  position: absolute;
+  right: 6px;
+  top: 10px;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #555 transparent transparent transparent;
+}
+
+.dropdown-text,
+.dropdown-content a {
+  color: #333;
+  text-shadow: 0 1px #fff;
+}
+
+.dropdown-toggle {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 1px;
+  background: transparent;
+  text-indent: -10px;
+  height: 34px;
+  width: 77%;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-content {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 32px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  text-indent: 10px;
+  line-height: 32px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.dropdown-content a {
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text {
+  z-index: 2;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text:after {
+  border-width: 0 4px 5px 4px;
+  border-color: transparent transparent #555 transparent;
+}
+
+.dropdown-content:hover,
+.dropdown-toggle:focus ~ .dropdown-content {
+  opacity: 1;
+  visibility:visible;
+  top: 42px;
+}
+
+
+</style>

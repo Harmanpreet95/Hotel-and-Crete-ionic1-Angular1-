@@ -1,0 +1,58 @@
+<ion-view title="crete" id="page24" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a ng-click="$ionicGoBack()" style="color: #fff;"  class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{title_bytype}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+ <div class="hotel_col" ng-repeat="list in Beache"  ng-if = "currentLanguage != 'Έλληνες'">
+  <a ui-sref="menu.beachareanoeth({region:list.BeachRegion.region,region_lang : list.BeachRegion.region})"><img src="{{list.BeachRegion.regionimage}}" alt="image not found"></a>
+  <h2 class="top_text">{{list.BeachRegion.region}}</h2>
+  </div>
+  
+
+   <div class="hotel_col" ng-repeat="list in Beache" ng-if = "currentLanguage == 'Έλληνες'">
+  <a ui-sref="menu.beachareanoeth({region:list.BeachRegion.region_greek,region_lang : list.BeachRegion.region})"><img src="{{list.BeachRegion.regionimage}}" alt="image not found"></a>
+  <h2 class="top_text">{{list.BeachRegion.region_greek}}</h2>
+  </div>
+<!--  <div class="hotel_col">
+  <a ui-sref="menu.facilities"><img ng-click="bhumika(list.CreteExtra.id)" src="img/Untitled-13.jpg" alt="image not found"></a>
+  <h2 class="top_text">Shopping</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.accomodation"><img src="img/Untitled-14.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Dining</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-15.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Entertaining</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.Questionnaire"><img src="img/Untitled-16.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Activities</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-17.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Rentals</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-18.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Services</h2>
+  </div>
+  -->
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,13 @@
+<ion-modal-view class="animated zoomIn">
+    <ion-header-bar>
+      <h1 class="title center_head">History of {{title}}</h1>
+       <a ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204); " ng-click="modal.hide()" class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>
+    <ion-content>
+     <div class="para_text">
+    <!--<p>{{desc}} </p>-->
+    <div ng-bind-html="desc"></div>
+    </div>
+    </ion-content>
+  </ion-modal-view>
+

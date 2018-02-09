@@ -1,0 +1,58 @@
+<ion-view title="cities" id="page80" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title" style="width: 70%;
+white-space: normal;
+display: table-cell;
+line-height: normal;
+float: none;
+vertical-align: middle;
+text-align: center;
+position: static;
+font-size: 16px;
+">{{title_shp}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-if = "currentLanguage != 'Έλληνες'" ng-repeat="shopname in shop_all track by $index" ng-click="single_crete($index,shopname.GuideShopping.id,shopname.GuideShopping.description,shopname.GuideShopping.title)">
+  <a ui-sref="menu.shop1"><img src="{{shopname.GuideShopping.image}}" alt="image not found"></a>
+  <h2 class="top_text">{{shopname.GuideShopping.title}}</h2>
+  </div>
+
+  
+   <div class="hotel_col" ng-if = "currentLanguage == 'Έλληνες'" ng-repeat="shopname in shop_all track by $index" ng-click="single_crete($index,shopname.GuideShopping.id,shopname.GuideShopping.description_greek,shopname.GuideShopping.title_greek)">
+  <a ui-sref="menu.shop1"><img src="{{shopname.GuideShopping.image}}" alt="image not found"></a>
+  <h2 class="top_text">{{shopname.GuideShopping.title_greek}}</h2>
+  </div>
+<!--  <div class="hotel_col">
+    <a ui-sref="menu.chania"><img src="img/chania.jpg" alt="image not found"></a>
+  <h2 class="top_text">	Shop 2</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.rethymno"><img src="img/rethymo.jpg" alt="image not found"></a>
+  <h2 class="top_text">Shop 3</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <a ui-sref="menu.sitia"><img src="img/scape.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Shop 4</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.agios"><img src="img/agios.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">	Shop 5</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.ieraperta"><img src="img/iera.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Shop 6</h2>
+  </div>-->
+  
+  </ion-content>
+</ion-view>
+

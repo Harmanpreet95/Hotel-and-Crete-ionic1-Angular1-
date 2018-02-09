@@ -1,0 +1,101 @@
+<ion-view title="Usefulnumber" id="page13" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">{{'Useful_Tel'|translate}}</h1>
+   <a  ng-click="$ionicGoBack()" menu-toggle="left" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+  <ion-content padding="false" class="has-header">
+   
+    
+    
+    <div class="list">
+
+        <div class="number_color" ng-repeat="useful in number">
+      <h4 ng-if = "currentLanguage != 'Έλληνες'">{{useful.UsefulNumber.title}}</h4>
+      <h4 ng-if = "currentLanguage == 'Έλληνες'">{{useful.UsefulNumber.title_greek}}</h4>
+      <!--///////////////////Description Only//////////////-->
+      <div ng-if = "useful.UsefulNumber.description != '' && useful.UsefulData.length == 0">
+        <!--<p ng-if = "currentLanguage != 'Έλληνες'">{{useful.UsefulNumber.description}}</p>-->
+        <div ng-if = "currentLanguage != 'Έλληνες'" ng-bind-html="useful.UsefulNumber.description"></div>
+        <!--<p ng-if = "currentLanguage == 'Έλληνες'">{{useful.UsefulNumber.description_greek}}</p>-->
+        <div ng-if = "currentLanguage == 'Έλληνες'" ng-bind-html="useful.UsefulNumber.description_greek"></div>
+      </div>
+      <!--///////////////////Description Only//////////////-->
+      
+      
+      <!--///////////////////Table Only//////////////-->
+    
+      <div class="table_outer" ng-if = "useful.UsefulNumber.description == '' && useful.UsefulData.length > 0">
+
+        <table cellpadding="5" class="table_sec" style="width: 100%;" ng-if = "currentLanguage != 'Έλληνες'">
+            <tr ng-repeat = "USEdata in useful.UsefulData" >
+           <td>{{USEdata.title}}</td>
+           <td>{{USEdata.number}}</td> 
+         </tr>
+
+       </table>
+
+         <table cellpadding="5" class="table_sec" style="width: 100%;" ng-if = "currentLanguage == 'Έλληνες'">
+            <tr ng-repeat = "USEdata in useful.UsefulData" >
+           <td>{{USEdata.title_greek}}</td>
+           <td>{{USEdata.number}}</td> 
+         </tr>
+
+       </table>
+    </div>
+      
+      <!--///////////////////Table Only//////////////-->
+      
+      <!--///////////////////Table + Description Only//////////////-->
+      <div ng-if = "useful.UsefulNumber.description != '' && useful.UsefulData.length > 0">
+       
+         <div class="table_outer" ng-if = "currentLanguage != 'Έλληνες'">
+   
+        <table cellpadding="5" class="table_sec" style="width: 100%;" >
+            <tr ng-repeat = "USEdata in useful.UsefulData">
+               
+           <td>{{USEdata.title}}</td>
+           <td>{{USEdata.number}}</td> 
+         </tr>
+
+       </table> <br>
+        <!--<p>{{useful.UsefulNumber.description}}</p>-->
+        <div ng-bind-html="useful.UsefulNumber.description"></div>
+         </div>
+     
+          
+
+
+          <div class="table_outer" ng-if = "currentLanguage == 'Έλληνες'">
+   
+        <table cellpadding="5" class="table_sec" style="width: 100%;" >
+            <tr ng-repeat = "USEdata in useful.UsefulData">
+               
+           <td>{{USEdata.title_greek}}</td>
+           <td>{{USEdata.number}}</td> 
+         </tr>
+
+       </table><br>
+        <!--<p>{{useful.UsefulNumber.description_greek}}</p>
+        -->
+        <div ng-bind-html="useful.UsefulNumber.description_greek"></div>
+         </div>
+          
+      </div>
+      
+      <!--///////////////////Table + Description Only//////////////-->
+      
+      </div>
+   
+    </div>
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>

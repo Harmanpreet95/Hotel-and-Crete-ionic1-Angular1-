@@ -1,0 +1,98 @@
+<ion-view title="info" id="page12" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">{{'Info'| translate}}</h1>
+   <a  menu-toggle="left" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+  <ion-content padding="false" scroll="true" class="has-header" style="background:url(img/backimage.jpg) no-repeat; background-size:cover;">
+  
+      
+<!--      <div class="para_text" ng-repeat="info in infos">
+    <p ng-bind-html="infos.description">{{infos.UsefulInfo.title}}</p>
+                
+    </div>
+    {{infos.UsefulInfo.description}}-->
+    
+
+      <div class="collapse_menu1 collapse_info"> 
+            <ion-list>
+                <div ng-repeat="info in infos" ng-if = "currentLanguage != 'Έλληνες'">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(info)" ng-class="{active: isGroupShown(info)}">
+                        <div>
+                            <a  class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                {{info.UsefulInfo.title}}
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(info)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+                                <!--<p style="line-height: 21px; padding-top: 15px; padding-bottom: 15px;"> {{info.UsefulInfo.description}}</p>-->
+                         <div ng-bind-html="info.UsefulInfo.description" class="wrap"></div>
+                        </ion-list>
+                        </div>
+                    </ion-item>
+                </div>
+
+                  <div ng-repeat="info in infos" ng-if = "currentLanguage == 'Έλληνες'">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(info)" ng-class="{active: isGroupShown(info)}">
+                        <div>
+                            <a  class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                {{info.UsefulInfo.title_greek}}
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(info)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+                     <!--<p style="line-height: 21px; padding-top: 15px; padding-bottom: 15px;"> {{info.UsefulInfo.description_greek}}</p>-->
+                        <div style="line-height: 21px; padding-top: 15px; padding-bottom: 15px;" class="wrap" ng-bind-html="info.UsefulInfo.description_greek"></div>
+                        </ion-list>
+                        </div>
+                    </ion-item>
+                </div>
+                
+            </ion-list>
+           
+                </div>
+   
+  
+  </ion-content>
+    
+</ion-view>
+
+<style>
+    body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+  background:#fff;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.wrap {
+    white-space: normal;
+    text-align : justify;
+}
+</style>
+

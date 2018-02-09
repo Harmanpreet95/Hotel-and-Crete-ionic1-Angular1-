@@ -1,0 +1,26 @@
+<ion-view title="conatctus" id="page78" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">Contact Us</h1>
+   <a ui-sref="menu.hotelname" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+  <ion-content padding="true" scroll="true" class="has-header">
+
+      <div class="para_text" ng-repeat="contact in contactus">
+    <p> {{contact.Contact.info}}</p>
+                
+    </div>
+    
+    
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>
+

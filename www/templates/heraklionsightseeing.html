@@ -1,0 +1,115 @@
+<ion-view title="heraklionsightseeing" id="page50" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 style="line-height: 31px;" class="title">{{hera_titleCity}}<span>{{'Sightseeing' | translate}}</span></h1>
+  
+   <button class="button button-clear icon ion-navicon pull-right" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block;"></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+      <div class="hotel_col" ng-repeat =  "details in sight track by $index" ng-if = "currentLanguage != 'Έλληνες'">
+  <a ng-click="sightdetail(details.GuideSightseeings.id,$index,details.GuideSightseeings.image,details.GuideSightseeings.title,details.GuideSightseeings.description,details.GuideSightseeings.latitude,details.GuideSightseeings.longitude)"><img src="{{details.GuideSightseeings.image}}" alt="image not found"></a>
+  <h2 class="top_text" style="color:#fff;">{{details.GuideSightseeings.title}}				
+	
+</h2>
+  </div>
+
+
+        <div class="hotel_col" ng-repeat =  "details in sight.GuideSightseeing" ng-if = "currentLanguage == 'Έλληνες'">
+  <a ng-click="sightdetail(details.GuideSightseeings.image,details.GuideSightseeings.title_greek,details.GuideSightseeings.description_greek,details.GuideSightseeings.latitude,details.GuideSightseeings.longitude)"><img src="{{details..GuideSightseeings.image}}" alt="image not found"></a>
+  <h2 class="top_text" style="color:#fff;">{{details.title_greek}}				
+	
+</h2>
+  </div>
+<!--  <div class="hotel_col">
+  <img src="img/hall.jpg" alt="image not found">
+  <h2 class="top_text">Loggia / Town Hall</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/sinifountain.jpg" alt="image not found">
+  <h2 class="top_text">Morozini Fountain</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/saint.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Saint Titus</h2>
+  </div>
+  
+  <div class="hotel_col">
+   <img src="img/mark.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">saint Markus Basilica</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/walls.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Venetian Walls</h2>
+  </div>
+  
+  <div class="hotel_col">
+<img src="img/koules.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Koules Fortress</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/neoria.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Venetian Dockyards / Neoria</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/cath.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Cathedral Church Saint Minas</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/historical.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Historical Museum of Crete			
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+<img src="img/natural.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Natural History Museum		
+			
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/relics.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Museum of Icons & Relics of the 			
+Archbishopric of Crete			
+			
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/peter.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Church of Saints Peter & Paul			
+			
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/bambo.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Bembo Fountain & Turkish Sebil				
+			
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <img src="img/old.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Old Market 1866 st.		
+			
+</h2>
+  </div>-->
+
+  </ion-content>
+</ion-view>
+

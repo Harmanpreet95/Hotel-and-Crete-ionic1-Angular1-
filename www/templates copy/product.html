@@ -1,0 +1,50 @@
+<ion-view title="product" id="page35" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">Products</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-repeat="products in crete_gastronomy">
+  <a ng-click="detailGastro(products.title,products.description)"><img src="{{products.image}}" alt="image not found"></a>
+  <h2 ng-click="detailGastro(products.title,products.description)" class="top_text" style="color : #000;">{{products.title}}</h2>
+  </div>
+  
+<!--  <div class="hotel_col">
+  <a ui-sref="menu.service"> <img src="img/dairy.jpg" alt="image not found"></a>
+  <h2 class="top_text">Dairy Products</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.facilities"><img src="img/honey.jpg" alt="image not found"></a>
+  <h2 class="top_text">Honey</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.accomodation"><img src="img/herbs.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Cretan Herbs</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/wine.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Wine</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.Questionnaire"><img src="img/raki.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Raki</h2>
+  </div>
+  -->
+ 
+  
+  </ion-content>
+</ion-view>
+

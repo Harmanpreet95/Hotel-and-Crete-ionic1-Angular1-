@@ -1,0 +1,37 @@
+<ion-view title="Hotel-A" id="page22" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive btn_size ">
+  <h1 ng-if = "currentLanguage != 'Έλληνες'" class="title">{{value.AddHotel.hotelname}}</h1>
+  <h1 ng-if = "currentLanguage == 'Έλληνες'" class="title">{{value.AddHotel.hotelname_greek}}</h1>
+ 
+   <a style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+<!--<ion-content style="background:#000;" padding="false" scroll="true" class="has-header">
+
+
+
+
+<ion-slides on-slide-changed="slideChanged(index)"  does-continue="true" class="slider_edit">
+  <ion-slide-page  ng-repeat="about in group_hotel">
+    <div class="box2 group">  
+      <div class="boxxinn">
+      <img src="{{about.About.image}}">
+      </div>
+    </div>
+  </ion-slide-page>
+</ion-slides>-->
+
+<ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_colim"  ng-repeat="about in group_hotel">
+  <a><img src="{{about.About.image}}" alt="image not found"></a>
+  
+  </div>
+
+
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,111 @@
+<ion-view title="Weather" id="page10" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive btn_size " style="background:none !important;">
+  <h1 class="title">Weather</h1>
+  
+   <a ui-sref="menu.groupHotel" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+
+  <ion-content padding="false" class="" style=" width: 100%; float: left; background-image:url(img/wall.jpg); background-size:cover;background-attachment:scroll; padding-top:44px;">
+    
+    
+    
+    <div class="list">
+
+    <div class="item border_item" ng-repeat="degree in weather_list track by $index" ui-sref="menu.weatherdetail({id:$index})">  
+      
+      <div class="row padding1">
+      <div class="col padding1" style="width: 41% !important;
+min-width: 41%;">
+        <div class="days">
+       <h3  class="height font32" style = "text-align: left;">{{degree.temp.day}}<sup>o</sup>C</h3>
+       </div>
+      </div>
+      
+      <div class="col padding1">
+       <div class="days" style = "width: 60%;
+margin: 0 20%; ">
+       <i>
+         <img ng-src="http://openweathermap.org/img/w/{{degree.weather[0].icon}}.png">
+       </i>
+     </div>
+      </div>
+      
+      
+      <div class="col padding1">
+        <div class="days">
+      <h4 class="font32 margin6">{{degree.finaldate}}</h4>
+      <p>{{ degree.finalday }}</p>
+      </div>
+       </div>
+	</div>
+      
+    </div>
+
+    <!--<div class="item border_item">
+      
+      <div class="row padding1">
+      <div class="col padding1">
+       <div class="days">
+       <h3 class="height">63<sup>o</sup></h3>
+       </div>
+      </div>
+      
+      <div class="col padding1">
+       <div class="days">
+       <i class="icon ion-ios-cloud-outline"></i>
+     </div>
+      </div>
+      
+      
+      <div class="col padding1">
+        <div class="days">
+      <h4>31</h4>
+      <p>Tues</p>
+      </div>
+       </div>
+	</div>
+      
+    </div>
+    
+    <div class="item border_item">
+      
+      <div class="row padding1">
+      <div class="col padding1">
+      <div class="days">
+       <h3 class="height">92<sup>o</sup></h3>
+       </div>
+      </div>
+      
+      <div class="col padding1">
+       <div class="days">
+       <i class="icon ion-ios-sunny-outline"></i>
+     </div>
+      </div>
+      
+      
+      <div class="col padding1">
+        <div class="days">
+      <h4>01</h4>
+      <p>Wed</p>
+      </div>
+       </div>
+	</div>
+      
+    </div>
+
+</div>
+    
+    -->
+    
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>

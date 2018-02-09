@@ -1,0 +1,23 @@
+<ion-view title="Map" id="page9" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">Map</h1>
+   <a  style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+    <!--<ion-content padding="true" style="background:url(img/map1.jpg) no-repeat center;background-size:cover;" class="has-header">-->
+        
+        
+ <ion-content class="has-header" padding="false" style="top:0;">
+       
+  <ng-map style="height:100vh; width:100%;" draggable="true"  id="map" zoom-in="80%"  center="[{{lat_west}},{{long_west}}]"> 
+       <marker  position="[{{lat_west}},{{long_west}}]"></marker>
+</ng-map>
+
+
+
+               
+    </ion-content>
+        
+ >
+</ion-view>

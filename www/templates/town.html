@@ -1,0 +1,31 @@
+<ion-view title="town" id="page39" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">Town/Villages</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+<!--  <div class="town_east">
+  <h2>East Crete</h2>
+  	
+  	</div>
+    
+    <div class="town_west">
+  <h2>West Crete</h2>
+  	</div>-->
+<ng-map style="height:100vh; width:100%;" draggable="true"  id="map"  center="[{{lat_est}}, {{long_est}}]" zoom="8">
+    <marker ng-repeat="maplist in vill" position="[{{lat_est}},{{long_est}}]" visible="true" icon="img/brown_loc.png" on-click="guidevillage_city(maplist.GuideList.id)">
+                </marker> 
+        </ng-map>
+  
+  </ion-content>
+</ion-view>
+

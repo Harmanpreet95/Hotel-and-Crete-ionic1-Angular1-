@@ -1,0 +1,35 @@
+<ion-view title="birthofzeus" id="page28" hide-nav-bar="true">
+
+<!--<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">{{title_name}}</h1>
+   <a ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+</div>-->
+
+  <ion-header-bar align-title="center" class="bar-positive">
+    <div class="buttons">
+        <button style="color: #fff; visibility:hidden" class="button" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></button>
+    </div>
+    <h1 class="title">{{title_name}}</h1>
+    <!--<h1 style= "width: 89%;" ng-if = "currentLanguage == 'Έλληνες'" class="title">{{beach.title_greek}}</h1>-->
+    <div class="buttons">
+        <button ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204); background : none;font-size:30px;border:none;" ng-click="modal.hide()" class="button ion-ios-close-empty"></button>
+    </div>
+</ion-header-bar>
+
+
+  <ion-content padding="true" scroll="true" class="has-header">
+
+    <div class="para_text">
+    <!--<p> {{description}}</p>-->
+<div ng-bind-html="description"></div>
+    </div>
+    
+    
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>
+

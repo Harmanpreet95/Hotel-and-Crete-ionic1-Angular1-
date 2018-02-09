@@ -1,0 +1,338 @@
+<ion-view title="Questionnaire" id="page23" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">Questionnaire</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+    
+  <ion-content padding="false" scroll="true" class="has-header" style="background:#efefef;">
+  <form id="home-form2" name="questionnaire" class="list register_form" ng-submit="submitted && questionnaire.$valid && submit()" >
+<div  class="list list_form" ng-repeat="quesionnaire in Questionnaires"> 
+    
+  <div class="item item-divider heading_change">
+    {{quesionnaire.category}}
+  </div>
+<div class="padding2" ng-repeat="val in quesionnaire.value" >
+
+  <label class="item item-input item-select">
+    <div  class="input-label">
+      {{val.question}}
+    </div>
+      
+      <select name="val" ng-model="sel[val.id]"  required="">  
+      <option value="Excellent">Excellent</option>
+      <option value="Very Good">Very Good</option>
+      <option value="Good">Good</option>
+      <option value="Medium">Medium</option>
+      <option value="Poor">Poor</option>
+    </select>
+     
+  
+  </label>
+</div>
+    </div>
+
+<div class="item item-divider heading_change1">
+    
+<span>Overall Rating</span>
+<ionic-ratings ratingsobj='ratingsObject' index='0'></ionic-ratings>
+	<!--  <ul class="list_align">
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+</ul>  -->
+<!--<fieldset style="border: none; padding:0px;">
+         <div class="cus_rat">
+         <span class="rating" style="text-align: left; width:auto;">
+       <div class="star44">
+      <input type="radio"  class="rating-input" ng-model="val.rating" value="5" /><label class="rating-star" for="rating-5" name="a"></label>
+      </div>
+
+<div class="star44">
+      <input type="radio"   class="rating-input"  ng-model="val.rating" value="4" /><label class="rating-star" for="rating-4"  name="a"></label>
+</div>
+
+<div class="star44">
+      <input type="radio" class="rating-input"  ng-model="val.rating" value="3" /><label class="rating-star" for="rating-3"></label>
+</div>
+
+<div class="star44">
+      <input type="radio"  class="rating-input" ng-model="val.rating" value="2" /><label class="rating-star" for="rating-2"></label>
+      </div>
+
+      <div class="star44">
+      <input type="radio"  class="rating-input"  ng-model="val.rating" value="1" /><label class="rating-star" for="rating-1"></label>
+      </div>
+    </span>
+         </div>
+</fieldset>-->
+
+
+<h6 style="margin-bottom:0;">Ratings  </h6>
+<!--<fieldset style="border: none;">
+         <div class="cus_rat">
+         <span class="rating" style="text-align: left;">
+      <input type="radio" id="rating-5"  class="rating-input" ng-model="val.rating" value="5" /><label class="rating-star" for="rating-5"></label>
+      <input type="radio" id="rating-4"  class="rating-input" ng-model="val.rating" value="4" checked="checked" /><label class="rating-star" for="rating-4"></label>
+      <input type="radio" id="rating-3" class="rating-input" ng-model="val.rating" value="3" /><label class="rating-star" for="rating-3"></label>
+      <input type="radio" id="rating-2" class="rating-input" ng-model="val.rating" value="2" /><label class="rating-star" for="rating-2"></label>
+      <input type="radio" id="rating-1" class="rating-input" ng-model="val.rating" value="1" /><label class="rating-star" for="rating-1"></label>
+    </span>
+         </div>
+</fieldset> -->
+
+</div>
+  <!-- </div> -->
+<div  class="item item-divider heading_change2">
+<span>Comments</span>
+	 <div class="form-group ">
+   <textarea  class="form-control divide" placeholder="Enter your message" ng-model="data.comments" style="height: 155px;" name="txt" required="" ></textarea>
+   <span ng-show="submitted && questionnaire.txt.$error.required ">This field is required</span>
+    </div>
+ </div>  
+ <div class="submit01">
+<button type="submit"  class="button button-positive right2" ng-click="submitted=true">
+Submit
+</button>
+</div>
+    </form>
+      
+  </ion-content>
+</ion-view>
+
+<!--  <label class="item item-input item-select">
+    <div class="input-label">
+      Cleanliness
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  </div>
+  
+<div class="item item-divider heading_change">
+   Reception	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label">
+ Friendliness	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   Efficiency	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Service	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+
+<div class="item item-divider heading_change">
+   Rooms	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label ">
+ Friendliness	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   Cleanliness	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label ">
+      Maid Service	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+
+<div class="item item-divider heading_change">
+Restaurant	
+	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label">
+ Food Quality	
+	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+Food Variety	
+	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Friendliness	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  
+  <label class="item item-input item-select">
+    <div class="input-label">
+     Service	
+	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+<div class="item item-divider heading_change">
+Bar
+	
+
+  </div>
+<div class="padding2">
+
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Friendliness	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  
+  <label class="item item-input item-select">
+    <div class="input-label ">
+     Service	
+	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>-->
+
+
+
+
+  
+   
+

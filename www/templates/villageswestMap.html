@@ -1,0 +1,61 @@
+<ion-view title="cities" id="page40" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+<!--  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>-->
+  <h1 class="title" ng-if = "currentLanguage != 'Έλληνες'">{{westMap.title}}</h1>
+  <h1 class="title" ng-if = "currentLanguage == 'Έλληνες'">{{westMap.title_greek}}</h1>
+    <a ng-click="$ionicGoBack()"style="color: rgb(204, 204, 204);" ng-click="modal.hide()" class="button button-icon icon ion-ios-close-empty"></a>
+
+<!--   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>-->
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+<div class="slider_change" >
+ <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider1" delegate-handle="slider1" id="preferance-slider1" style="width:100%;height:330px;">
+<!--  <ion-slide-page ng-repeat="about in abouthotel" id="preferance-slide24" style="background:url({{about.About.image}}) no-repeat center;background-size:cover;"></ion-slide-page>-->
+ 
+	 <ion-slide-page ng-repeat="vill_Map in village_Mapp"  id="preferance-slide25" style="background:url({{vill_Map}}) no-repeat center;background-size:cover;"></ion-slide-page>
+     
+    </ion-slides>
+   </div>
+
+
+
+  <div class="hotel_col2" ng-if = "currentLanguage != 'Έλληνες'">
+  <img src="{{west.GuideVillage.image}}" alt="image not found">
+  <h2  class="top_text" style="color:rgb(204, 204, 204);">{{westMap.title}}</h2>
+  </div>
+  <!--//////////////////////////////////////////-->
+    <div class="hotel_col2" >
+  <img src="{{west.GuideVillage.image}}" alt="image not found" ng-if = "currentLanguage == 'Έλληνες'">
+  <h2  class="top_text" style="color:rgb(204, 204, 204);">{{westMap.title_greek}}</h2>
+  </div>
+
+
+
+  <div class="button-bar">
+  <a class="button" ui-sref="menu.heramapVillage({lat : westMap.latitude, long : westMap.longitude})">{{'Map' | translate}}</a>
+  <a class="button" ng-click="launchNavigator()">{{'Direction' | translate}}</a>
+  
+</div>
+
+
+<div class="padding" ng-if = "currentLanguage != 'Έλληνες'">
+<!--<p>{{westMap.description}}</p>-->
+<div ng-bind-html="westMap.description"></div>
+</div>
+
+<div class="padding" ng-if = "currentLanguage == 'Έλληνες'">
+<!--<p>{{westMap.description_greek}}</p>-->
+<div ng-bind-html="westMap.description_greek"></div>
+</div>
+
+
+  </ion-content>
+</ion-view>
+

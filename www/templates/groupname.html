@@ -1,0 +1,23 @@
+<ion-view title="Group Name" id="page14" hide-nav-bar="true">
+
+<div  class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+     <h1 class="title" ng-if = "currentLanguage != 'Έλληνες'">{{groupName | uppercase}}</h1>
+  <h1 class="title" ng-if = "currentLanguage == 'Έλληνες'">{{groupname_greek  | uppercase}}</h1>
+ 
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="true" scroll="true" style="background:url({{image_group}}) no-repeat center;background-size:cover;" class="has-header">
+  <div class="spacer" style="width:100%; float:left; height:55vh;"> </div>
+    
+    <a ng-if = "currentLanguage != 'Έλληνες'" ui-sref="menu.hotel-a({id:group.AddHotel.id})" id="groupHotel-button2" class="button button-light  button-block color_change" ng-repeat="group in Group">{{group.AddHotel.hotelname}}</a>
+    <a ng-if = "currentLanguage == 'Έλληνες'" ui-sref="menu.hotel-a({id:group.AddHotel.id})" id="groupHotel-button2" class="button button-light  button-block color_change" ng-repeat="group in Group">{{group.AddHotel.hotelname_greek}}</a>
+<!--    <a ui-sref="menu.messages" id="groupHotel-button5" class="button button-light  button-block color_change">Hotel-B</a>
+    <a ui-sref="menu.messages" id="groupHotel-button6" class="button button-light  button-block color_change">Hotel-C</a>-->
+  </ion-content>
+</ion-view>

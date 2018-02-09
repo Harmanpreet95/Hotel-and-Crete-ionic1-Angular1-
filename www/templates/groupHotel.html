@@ -1,0 +1,39 @@
+<ion-view title="Group Hotel" id="page2" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <!--<a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>-->
+   
+  <h1 class="title" ng-if = "currentLanguage != 'Έλληνες'">{{res.hotelname | uppercase}}   {{groupname}}</h1>
+    <h1 class="title" ng-if = "currentLanguage == 'Έλληνες'">{{res.hotelname_greek | uppercase}}  {{groupname_greek}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="true" scroll="true" style="background: url({{imagebg}}) no-repeat center;background-size:cover;" class="has-header">
+  <div class="spacer" style="width:100%; float:left; height:55vh;"> </div>
+
+  <div ng-if = "currentLanguage != 'Έλληνες'">
+    <a ui-sref="menu.hotelname" id="groupHotel-button5" class="button button-light  button-block color_change">{{res.hotelname | uppercase}}</a>
+      <a ui-sref="menu.groupname({gname:groupName})" id="groupHotel-button2" class="button button-light  button-block color_change" ng-if = "res.groupname != ''" >{{res.groupname | uppercase}}</a>
+    <a ui-sref="menu.crete" id="groupHotel-button6" class="button button-light  button-block color_change">CRETE</a>
+  </div>
+
+
+    <div ng-if = "currentLanguage == 'Έλληνες'">
+    <a ui-sref="menu.hotelname" id="groupHotel-button5" class="button button-light  button-block color_change">{{res.hotelname_greek | uppercase}}</a>
+      <a ui-sref="menu.groupname({gname:groupName})" id="groupHotel-button2" class="button button-light  button-block color_change" ng-if = "res.groupname_greek != ''">{{res.groupname_greek | uppercase}}</a>
+    <a ui-sref="menu.crete" id="groupHotel-button6" class="button button-light  button-block color_change">{{'CRETE' | translate}}</a>
+  </div>
+
+
+  </ion-content>
+</ion-view>
+<style>
+    .bar .title{
+        margin: 0px 40px;
+    }
+    
+</style>

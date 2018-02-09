@@ -1,0 +1,84 @@
+<ion-view title="Facilities" id="page18" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{'Facilities' | translate}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  ghgh
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-repeat="facilities in facility">
+ <a ng-click="facilities1(facilities.Facilitie.category)" > <img src="{{facilities.Facilitie.image}}" alt="image not found"></a>
+ <h2 ng-if = "currentLanguage != 'Έλληνες'" class="top_text" >{{facilities.Facilitie.category | uppercase }}</h2>
+  <h2 ng-if = "currentLanguage == 'Έλληνες'" class="top_text" >{{facilities.Facilitie.category_greek | uppercase }}</h2>
+ <!--<center><p> {{facilities.Facilitie.description}}</p></center>-->
+  </div>
+  
+<!--  <div class="hotel_col">
+  <img src="img/Untitled-8.jpg" alt="image not found">
+  <h2 class="top_text">Bars</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-9.jpg" alt="image not found">
+  <h2 class="top_text">Swimming Pools</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/untiled-10.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Meeting/Conference Room		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/honeydoo-salon1.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Wellness / Spa	
+		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/honeydoo-salon2.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Gym / Fitness	
+		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/honeydoo-salon3.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Games Room	
+		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/children.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Children Playground		
+		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/ground.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">		Sports Courts 	
+	
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/party.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Events	
+		
+</h2>
+  </div>-->
+  
+  </ion-content>
+</ion-view>
+
+

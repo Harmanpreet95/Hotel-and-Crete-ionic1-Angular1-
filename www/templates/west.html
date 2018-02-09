@@ -1,0 +1,77 @@
+<ion-view title="guidetocrete" id="page39" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a ng-click="$ionicGoBack()" style="color: #fff;" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title" ng-if = "currentLanguage != 'Έλληνες'">{{wsttitle}}</h1>
+  <h1 class="title" ng-if = "currentLanguage == 'Έλληνες'">{{wsttitle_greek}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+<!--<div ng-repeat="guidecrete in guidecretes" class="hotel_col">
+  <a ng-if="guidecrete.GuideCrete.id != 2" ng-click="guidevillage(guidecrete.GuideCrete.id,guidecrete.GuideCrete.title,guidecrete.GuideCrete.image)"><img src="{{guidecrete.GuideCrete.image}}" alt="image not found"></a>
+    <a ng-if="guidecrete.GuideCrete.id == 2" ng-click="guidecity(guidecrete.GuideCrete.id,guidecrete.GuideCrete.title,guidecrete.GuideCrete.image)"><img src="{{guidecrete.GuideCrete.image}}" alt="image not found"></a>
+  <h2 class="top_text" style="color:#fff">{{guidecrete.GuideCrete.title}}</h2>
+</div>-->
+
+ 
+<div class="hotel_col" ng-repeat="vill in west track by $index " ng-if = "currentLanguage != 'Έλληνες'">
+  <a ui-sref="menu.villageswest({id:$index})"><img src="{{vill.GuideVillage.image}}" alt="image not found"></a>
+  
+  <h2 class="top_text">{{vill.GuideVillage.title}}</h2>
+</div>
+
+  <div class="hotel_col" ng-repeat="vill in west track by $index " ng-if = "currentLanguage == 'Έλληνες'">
+  <a ui-sref="menu.villageswest({id:$index})"><img src="{{vill.GuideVillage.image}}" alt="image not found"></a>
+  
+  <h2 class="top_text">{{vill.GuideVillage.title_greek}}</h2>
+  </div>
+ <!--   
+  <div class="hotel_col">
+   <img src="img/village.jpg" alt="image not found">
+  <h2 class="top_text">	Towns / Villages</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/beach.jpg" alt="image not found">
+  <h2 class="top_text">Beaches</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <img src="img/scape.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Landscapes</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-15.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Archaeological Sites / Ancient Cities</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/museum.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Museums</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/seeing.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Monuments /Sightseeings		
+		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/church.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Monasteries / Churches		
+</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/tip.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Tips</h2>
+  </div>-->
+  
+  </ion-content>
+</ion-view>
+

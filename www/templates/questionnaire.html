@@ -1,0 +1,353 @@
+<ion-view title="Questionnaire" id="page23" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title" ng-if = "currentLanguage != 'Έλληνες'">Questionnaire</h1>
+  <h1 class="title" ng-if = "currentLanguage == 'Έλληνες'">Ερωτηματολόγιο</h1>
+  
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+    
+  <ion-content padding="false" scroll="true" class="has-header" style="background:#efefef;">
+  <form id="home-form2" name="questionnaire" class="list register_form" ng-submit="submit()" >
+<div  class="list list_form" ng-repeat="quesionnaire in Questionnaires"> 
+    
+  <div class="item item-divider heading_change" ng-if = "currentLanguage != 'Έλληνες'">
+    {{quesionnaire.category}}
+  </div>
+    <div class="item item-divider heading_change" ng-if = "currentLanguage == 'Έλληνες'">
+    {{quesionnaire.category_greek}}
+  </div>
+<div class="padding2" ng-repeat="val in quesionnaire.value" >
+
+  <label class="item item-input item-select">
+    <!--<div  class="input-label quest" ng-if = "currentLanguage != 'Έλληνες'">-->
+     <div class="input-label quest" ng-if = "currentLanguage != 'Έλληνες'" ng-bind-html="val.question"></div>
+    <!--</div>-->
+       <!--<div  class="input-label quest" ng-if = "currentLanguage == 'Έλληνες'">-->
+      <div class="input-label quest" ng-if = "currentLanguage != 'Έλληνες'" ng-bind-html="val.question_greek"></div>
+    <!--</div>-->
+      
+      <select name="val" ng-model="sel[val.id]"  required="">  
+      <option value="Excellent">{{'Excellent' | translate}}</option>
+      <option value="Very good">{{'Very good' | translate}}</option>
+      <option value="Good">{{'Good' | translate}}</option>  
+      <option value="average">{{'Average' | translate}}</option>
+      <option value="poor">{{'Poor' | translate}}</option>
+      <option value="Yes">{{'Yes' | translate}}</option>
+      <option value="No">{{'No' | translate}}</option>
+      <option value="May be">{{'May_be' | translate}}</option>
+      
+    </select>
+     
+  
+  </label>
+</div>
+    </div>
+
+<div class="item item-divider heading_change1">
+    
+<span>{{'Overall_Rating' | translate}}</span>
+<div class="rat_ing"><ionic-ratings ratingsobj='ratingsObject' index='0'></ionic-ratings></div>
+	<!--  <ul class="list_align">
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+  <li><i class="icon ion-star"></i></li>
+</ul>  -->
+<!--<fieldset style="border: none; padding:0px;">
+         <div class="cus_rat">
+         <span class="rating" style="text-align: left; width:auto;">
+       <div class="star44">
+      <input type="radio"  class="rating-input" ng-model="val.rating" value="5" /><label class="rating-star" for="rating-5" name="a"></label>
+      </div>
+
+<div class="star44">
+      <input type="radio"   class="rating-input"  ng-model="val.rating" value="4" /><label class="rating-star" for="rating-4"  name="a"></label>
+</div>
+
+<div class="star44">
+      <input type="radio" class="rating-input"  ng-model="val.rating" value="3" /><label class="rating-star" for="rating-3"></label>
+</div>
+
+<div class="star44">
+      <input type="radio"  class="rating-input" ng-model="val.rating" value="2" /><label class="rating-star" for="rating-2"></label>
+      </div>
+
+      <div class="star44">
+      <input type="radio"  class="rating-input"  ng-model="val.rating" value="1" /><label class="rating-star" for="rating-1"></label>
+      </div>
+    </span>
+         </div>
+</fieldset>-->
+
+
+
+<!--<fieldset style="border: none;">
+         <div class="cus_rat">
+         <span class="rating" style="text-align: left;">
+      <input type="radio" id="rating-5"  class="rating-input" ng-model="val.rating" value="5" /><label class="rating-star" for="rating-5"></label>
+      <input type="radio" id="rating-4"  class="rating-input" ng-model="val.rating" value="4" checked="checked" /><label class="rating-star" for="rating-4"></label>
+      <input type="radio" id="rating-3" class="rating-input" ng-model="val.rating" value="3" /><label class="rating-star" for="rating-3"></label>
+      <input type="radio" id="rating-2" class="rating-input" ng-model="val.rating" value="2" /><label class="rating-star" for="rating-2"></label>
+      <input type="radio" id="rating-1" class="rating-input" ng-model="val.rating" value="1" /><label class="rating-star" for="rating-1"></label>
+    </span>
+         </div>
+</fieldset> -->
+
+</div>
+  <!-- </div> -->
+<div  class="item item-divider heading_change2">
+
+	 <div class="form-group ">
+   <textarea  class="form-control divide" placeholder="{{'Comments' | translate}}" ng-model="data.comments" style="height: 155px;" name="txt" required="" ></textarea>
+   <span ng-show="submitted && questionnaire.txt.$error.required ">This field is required</span>
+    </div>
+ </div>  
+ <div class="submit01">
+<button ng-if = "currentLanguage != 'Έλληνες'" type="submit"  class="button button-positive right2" ng-click="submitted=true">
+Submit
+</button>
+<button ng-if = "currentLanguage == 'Έλληνες'" type="submit"  class="button button-positive right2" ng-click="submitted=true">
+υποβάλλουν
+</button>
+</div>
+    </form>
+      
+  </ion-content>
+</ion-view>
+
+<!--  <label class="item item-input item-select">
+    <div class="input-label">
+      Cleanliness
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  </div>
+  
+<div class="item item-divider heading_change">
+   Reception	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label">
+ Friendliness	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   Efficiency	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Service	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+
+<div class="item item-divider heading_change">
+   Rooms	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label ">
+ Friendliness	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+   Cleanliness	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label ">
+      Maid Service	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+
+<div class="item item-divider heading_change">
+Restaurant	
+	
+
+  </div>
+<div class="padding2">
+<label class="item item-input item-select">
+    <div class="input-label">
+ Food Quality	
+	
+
+    </div>
+      
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  
+  </label>
+  <label class="item item-input item-select">
+    <div class="input-label">
+Food Variety	
+	
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Friendliness	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  
+  <label class="item item-input item-select">
+    <div class="input-label">
+     Service	
+	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>
+
+<div class="item item-divider heading_change">
+Bar
+	
+
+  </div>
+<div class="padding2">
+
+   <label class="item item-input item-select">
+    <div class="input-label">
+      Friendliness	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+  
+  <label class="item item-input item-select">
+    <div class="input-label ">
+     Service	
+	
+
+	
+
+    </div>
+    <select>
+      <option>Excellent</option>
+      <option selected>Very Good</option>
+      <option>Good</option>
+      <option>Medium</option>
+      <option>Poor</option>
+    </select>
+  </label>
+</div>-->
+
+
+
+
+  
+   
+

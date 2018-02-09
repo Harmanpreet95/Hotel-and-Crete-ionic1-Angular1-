@@ -1,0 +1,75 @@
+<ion-modal-view class="animated zoomIn">
+    <!--<ion-header-bar>
+      <h1 ng-if = "currentLanguage != 'Έλληνες'" class="title" style="color:#fff;">{{areanorth.GuideBeache.title}}</h1>
+       <h1 ng-if = "currentLanguage == 'Έλληνες'" class="title" style="color:#fff;">{{areanorth.GuideBeache.title_greek}}</h1>
+      <a ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>-->
+
+
+
+
+  <ion-header-bar align-title="center" class="bar-positive">
+  <div class="buttons">
+    <button style="color: #fff; visibility:hidden" class="button" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></button>
+  </div>
+  <h1 style= "width: 89%;" ng-if = "currentLanguage != 'Έλληνες'" class="title">{{areanorth.GuideBeache.title}}</h1>
+  <h1 style= "width: 89%;" ng-if = "currentLanguage == 'Έλληνες'" class="title">{{areanorth.GuideBeache.title_greek}}</h1>
+  <div class="buttons">
+    <button ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204); background : none;font-size:30px;border:none;" ng-click="modal.hide()" class="button ion-ios-close-empty"></button>
+  </div>
+</ion-header-bar>
+
+
+
+
+
+
+
+    <ion-content class="has-header">
+      <!--<div class="image" style="background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+          <a ><img src="{{areanorth.GuideBeache.image}}" alt="image not found" width="100%" height="99%"></a>-->
+      <ion-slides disable-side-menu-drag=""  slider="slider1" delegate-handle="slider1" id="preferance-slider1" style="width:100%;height:250px;">
+<!--  <ion-slide-page ng-repeat="about in abouthotel" id="preferance-slide24" style="background:url({{about.About.image}}) no-repeat center;background-size:cover;"></ion-slide-page>-->
+
+	 <ion-slide-page ng-repeat="top_img in coast_image"  id="preferance-slide25">  <img src = "{{top_img}}"></ion-slide-page>
+   im{{top_img}}
+   
+    </ion-slides>
+      
+    </div>
+      <div>
+
+    <div class=" btn_content" >
+       <a ui-sref="menu.beachmap({lat : areanorth.GuideBeache.latitude ,long : areanorth.GuideBeache.longitude})" ng-click="shop_map()">{{'Map' | translate}}</a>
+       <a ng-click="launchNavigator(areanorth.GuideBeache.latitude,areanorth.GuideBeache.longitude)">{{'Direction' | translate}}</a>
+  
+    </div>
+          
+    <div class="padding">
+<!--<p ng-if = "currentLanguage != 'Έλληνες'">{{areanorth.GuideBeache.description}}</p>-->
+<div ng-if = "currentLanguage != 'Έλληνες'" ng-bind-html="areanorth.GuideBeache.description"></div>
+<!--<p ng-if = "currentLanguage == 'Έλληνες'">{{areanorth.GuideBeache.description_greek}}</p>-->
+<div ng-if = "currentLanguage == 'Έλληνες'" ng-bind-html="areanorth.GuideBeache.description_greek"></div>
+</div> 
+
+      
+</div>
+    
+    </ion-content>
+  </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

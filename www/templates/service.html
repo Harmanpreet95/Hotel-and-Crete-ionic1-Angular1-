@@ -1,0 +1,77 @@
+<ion-view title="Service" id="page22" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{'Service'|translate}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header" style="background:url(img/backimage.jpg) no-repeat; background-size:cover;">
+  
+
+      <div class="collapse_menu1 collapse_info"> 
+            <ion-list>
+                <div ng-repeat="service in services">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(service)" ng-class="{active: isGroupShown(service)}">
+                        <div>
+                            <a  class="info_acc" ng-if = "currentLanguage != 'Έλληνες'">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                {{service.Service.title}}
+                            </a>
+                             <a  class="info_acc" ng-if = "currentLanguage == 'Έλληνες'">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                {{service.Service.title_greek}}
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(service)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+				<!--<p ng-if = "currentLanguage != 'Έλληνες'">{{service.Service.description}}</p>-->
+                <div ng-if = "currentLanguage !=  'Έλληνες'" ng-bind-html="service.Service.description" class="acc_para"></div>
+                <!--<p ng-if = "currentLanguage == 'Έλληνες'">{{service.Service.description_greek}}</p>     -->
+                <div ng-if = "currentLanguage == 'Έλληνες'" ng-bind-html="service.Service.description_greek"></div>
+                        </ion-list>
+                        </div>
+                    </ion-item>
+                </div>
+                
+            </ion-list>
+                </div>
+            </ion-list>
+        </div>
+  
+  </ion-content>
+</ion-view>
+<style>
+    body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+  background:#fff;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+</style>
+
+

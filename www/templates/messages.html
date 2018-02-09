@@ -1,0 +1,53 @@
+<ion-view title="Messages" id="page8" hide-nav-bar="true" class="chat_bg">
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">{{'Message' | translate}}</h1>
+   <a menu-toggle="left" ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+  <ion-content padding="true" class="has-header has-footer">
+    
+
+
+  <div ng-repeat= "Send in Sends"  class="msg_box" >
+  	<div ng-if = "Send.Chat.sender == 'rest_admin'" class="msg_text">
+ 	<p ng-if = "Send.Chat.msg != null"> {{Send.Chat.msg}}</p>
+        <span style="display : none;" class="item-note-msg" ng-if = "Send.Chat.msg == null"></span>
+    </div>
+  
+ <!-- 
+  	<div class="msg_text1">
+	<p></p>
+    	</div>
+ -->
+ <!-- 
+  	<div  class="msg_text">
+ 	<p>{{input.msg}}</p>
+    </div>
+ -->
+ 
+  	<div ng-if = "Send.Chat.sender == 'customer'"  class="msg_text1">
+	 <p ng-if = "Send.Chat.msg != null">{{Send.Chat.msg}}</p>
+        <span style="display : none;" class="item-note-msg" ng-if = "Send.Chat.msg == null"></span>
+    	</div>
+  </div>
+    </ion-content>
+  
+  <div class="bar bar-footer change_border">
+ <div class="text_write">
+<form id="home-form2" name="messages" class="list register_form" ng-submit="message()" novalidate>
+    <input ng-if = "currentLanguage != 'Έλληνες'" type="text" ng-model="input.msg" placeholder="Type a message...">
+    <input ng-if = "currentLanguage == 'Έλληνες'" type="text" ng-model="input.msg" placeholder="Πληκτρολογήστε ένα μήνυμα ...">
+
+  <button ng-if = "currentLanguage != 'Έλληνες'" type="submit" class="button right_btn" ng-click="submitted=true">
+    Send
+  </button>
+    <button  ng-if = "currentLanguage == 'Έλληνες'" type="submit" class="button right_btn" ng-click="submitted=true">
+    Στείλετε
+  </button>
+  </form>
+   
+</div>
+</div>
+  
+  
+</ion-view>

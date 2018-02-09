@@ -1,0 +1,103 @@
+<ion-view title="Home" hide-nav-bar="true" id="page1">
+  <ion-content padding="true" class="manual-ios-statusbar-padding" style="background:url(img/register_bg.jpg) no-repeat; background-size:cover;">
+    <div>
+      <img src="img/Untitled-1.png" style="display: block; width: 25%; height: auto; margin-top:60px; margin-left: auto; margin-right: auto;">
+    </div>
+    <h4 id="home-heading4" style="color:#434242;text-align:center;">{{'Hotel' | translate}}</h4>
+<!--    <h3 id="home-heading5" style="color:#0F4A6F;text-align:center; margin-bottom: 0px;">Register</h3>-->
+    <div id="home-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#838383; margin-top:0px;">{{'Please_Use_Latin_Characters' | translate }} </p>
+    </div>
+    <form id="home-form2" name="registration" class="list register_form" ng-submit="submitted && registration.$valid && registerUser()" novalidate>
+        <div ng-if="currentLanguage == 'Έλληνες'">
+        <label class="item item-input" id="home-input6">
+          <input  type="text" ng-pattern ="/^[a-zA-Z\s]*$/" name="pname" placeholder="{{'Reservation_Name' | translate}}"  ng-model="data.username" required="">
+          </label>
+            <span ng-show="submitted && registration.pname.$error.required ">{{'This_field_is_required' | translate}}</span>
+             <span ng-show="submitted && registration.pname.$error.pattern ">{{'Use_only_alphabets' | translate}}</span>
+        </div>
+                <div ng-if="currentLanguage == 'English'">
+        <label class="item item-input" id="home-input6">
+          <input  type="text" ng-pattern ="/^[a-zA-Z\s]*$/" name="pname" placeholder="{{'Reservation_Name' | translate}}"  ng-model="data.username" required="">
+          </label>
+            <span ng-show="submitted && registration.pname.$error.required ">{{'This_field_is_required' | translate}}</span>
+             <span ng-show="submitted && registration.pname.$error.pattern ">{{'Use_only_alphabets' | translate}}</span>
+        </div>
+       <div>
+      <label class="item item-input" id="home-input8">
+          <input type="text" name="code"  placeholder="{{'Code'| translate}}" ng-model="data.code"  ng-pattern="/^[a-zA-Z0-9]*$/" required="" >
+         
+      </label>
+           <span ng-show="submitted && registration.code.$error.required ">{{'This_field_is_required' | translate}}</span>
+           
+        </div>
+        <div>
+      <label class="item item-input" id="home-input9">
+          <input type="text" name="roomnumber"  placeholder="{{'Room_Number' | translate}}" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.roomnumber" required="">
+      </label>
+            <span ng-show="submitted && registration.roomnumber.$error.required">{{'This_field_is_required' | translate}}</span>
+           
+        </div>
+<!--        <div>
+      <label class="item item-input" id="home-input10">
+        <input type="text" name="nationality" placeholder="Nationality" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.nationality" required="">
+      </label>
+            <span ng-show="submitted && registration.nationality.$error.required">This field is required</span>
+            
+        </div>-->
+        <div>
+      <label class="item item-input" id="home-input11">
+          <input type="email" name="email" placeholder="{{'Email' | translate}}" ng-model="data.email" required="">
+      </label>
+           <span ng-show="registration.email.$touched && registration.email.$invalid" >{{'Invalid_Email' | translate}}</span>
+        </div>
+        <div>
+            <label class="item item-input" id="home-input13">
+        <input type="password" name="password" placeholder="{{'Password' | translate}}" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.password" required="">
+      </label>
+             <span ng-show="submitted && registration.password.$error.required">{{'This_field_is_required' | translate}}</span>
+             </div>
+        <div>
+            <label class="item item-input" id="home-input14">
+        <input type="password" name="cpassword" placeholder="{{'Confirm_Password' | translate }}" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.cpassword" required="">
+      </label>
+             <span ng-show="submitted && registration.cpassword.$error.required">{{'This_field_is_required' | translate}}</span>
+             </div>
+        <button type="submit" id="home-button4" class="button button-positive  button-block" ng-click="submitted=true">{{'Register' | translate}}</button>
+            <div class="spacer" style="width:100%; float: left; height: 2vh;"></div>
+      <div class="button_txt" id="step1-button5" style="text-align:center;">{{'Already_have_an_Account' | translate}}?<span><a ui-sref="menu.login" href="#/side-menu21/login" style="color: #19577e; text-decoration:none;">{{'Login' | translate}}</a></span></div>
+
+    
+    </form>
+    
+    <div class="spacer" style="width:100%; float: left; height: 4vh;"></div>
+            <!--<div class="spacer" style="width: 300px; height: 24vh;"></div>-->
+       
+ <a style="width:100%;float: left;margin-bottom: 15px;" id="slider-heading22" class="skip">{{'Select_Language' | translate}}</a>
+
+       <div class="box01"> 
+     
+          <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:99%; float:left;"  ng-click="setLang('Έλληνες')">
+       <div class="left_align">
+              <span style="width: 17px;"><img src="img/greec.png" class="greec">Έλληνες</span> 
+                                            
+       </div>
+        </ion-radio>
+
+        </div>
+
+        <div class="box02">
+
+      
+
+           <ion-radio class="crd_list" name="a" ng-model="choice" style=" width:99%; float:left;"  ng-click="setLang('English')">
+                   <div class="left_align">
+                          <span style="width: 26px;"><img src="img/english.png" class="english">English</span>
+                    </div>
+            </ion-radio>
+        </div>
+
+        <div class="sapcer" style="width: 100%;float: left;height: 4vh;">
+
+  </ion-content>
+</ion-view>

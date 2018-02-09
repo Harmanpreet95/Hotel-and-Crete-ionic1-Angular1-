@@ -1,0 +1,32 @@
+<ion-view title="Map" id="page9" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">Map</h1>
+   <a  style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+    <!--<ion-content padding="true" style="background:url(img/map1.jpg) no-repeat center;background-size:cover;" class="has-header">-->
+        
+        
+          <ion-content class="has-header" padding="false" style="top:0;">
+        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d13719.679330087241!2d76.84325505!3d30.72065405!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1474523981988" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+      
+<!--<ng-map ng-repeat= "loc in allmap" center="{{loc.latitude}}, {{loc.longitude}}"></ng-map>-->
+
+
+<!-- <ng-map style="display: block; height: 100vh !important; overflow: hidden; width: 100%; float: left;" draggable="true"  id="map" center="[{{restname[0].latitude}}, {{restname[0].longitude}}]">-->
+
+<ng-map style="height:100vh; width:100%;" draggable="true"  id="map" zoom-in="80%"  center="[{{lat_beach}},{{long_beach}}]"> 
+    <marker  position="[{{lat_beach}},{{long_beach}}]"></marker>
+</ng-map>
+
+
+                
+<!--                    <marker id = "markerimg" position="35.3387,25.1442" title="heriklens" class='mm' icon='img/dine.png' >
+    </marker>-->
+                   
+               
+    </ion-content>
+        
+    <!--</ion-content>-->
+</ion-view>

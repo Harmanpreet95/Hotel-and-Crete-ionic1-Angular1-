@@ -1,0 +1,515 @@
+<ion-view title="Service" id="page22" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">Service</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header" style="background:url(img/backimage.jpg) no-repeat; background-size:cover;">
+  
+
+      <div class="collapse_menu1 collapse_info"> 
+            <ion-list>
+                <div ng-repeat="service in services">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(service)" ng-class="{active: isGroupShown(service)}">
+                        <div>
+                            <a  class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                {{service.Service.title}}
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(service)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+				<p>{{service.Service.description}}</p>
+                        
+                        </ion-list>
+                        </div>
+                    </ion-item>
+                </div>
+                
+            </ion-list>
+            
+<!--            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Phone Services
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Internet Services	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Business Center	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                	Wake up Call	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Safe
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                               Currency Exchange		
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                               24h Doctor on Call	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                	Laundry & Dry Clean Service		
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Car/Moto Rentals	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Early Breakfast	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Excursion Basket	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                	Taxi
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                            Shuttle Bus	
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Swimming Pool Towels		
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>
+                </div>
+            </ion-list>
+            </div>
+            
+            <div ng-controller="MyCtrl" class="collapse_menu1 collapse_info">
+            <ion-list>
+                <div ng-repeat="group in groups">
+                    <ion-item class="item-stable border_bottom01" ng-click="toggleGroup(group)" ng-class="{active: isGroupShown(group)}">
+                        <div>
+                            <a class="info_acc">
+                            <i class="icon ion-plus-round margin_rgt"></i>
+                                Baby Stroller Rent		
+
+                            </a>
+                        </div>
+                    </ion-item>
+          
+                    <ion-item class="item-accordion"  ng-show="isGroupShown(group)">
+                       
+                            <div class="checkbox_lst">
+                            <ion-list>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+                        
+                        </ion-list>
+                        </div>
+                                 
+                                 
+                                           
+                       
+                    </ion-item>-->
+                </div>
+            </ion-list>
+        </div>
+  
+  </ion-content>
+</ion-view>
+<style>
+    body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+
+/*
+ * http://docs.angularjs.org/api/ng/directive/ngShow#usage_animations
+ */
+.list .item.item-accordion {
+  line-height: 38px;
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+</style>
+
+

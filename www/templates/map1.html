@@ -1,0 +1,88 @@
+<ion-view title="Map" id="page9" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">Map</h1>
+   <a  style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+ <!--  <ion-content padding="true" style="background: url(img/YKw4NYAuSWWuL7RTi2NW_Untitled-8.jpg) no-repeat center;background-size:cover;" class="has-header"> -->
+  <ion-content class="has-header" padding="false" style="top:0;">
+  	<ng-map style="height:100vh;" id="map" center="[30.720654099999997,76.8432551]">
+             <marker position="[30.720654099999997,76.8432551]" visible="true" icon="img/redmap.png">
+                </marker> 
+        </ng-map>
+
+  </ion-content>
+
+  
+ <div class="bar bar-footer bar-positive">
+ <ion-scroll direction="x" style="width: 100%; height: auto">
+  <div class="row" style="padding:0;">
+  
+  <div class="col col-33">
+  	<div class="mountain_class">
+  <img src="img/blue_loc.jpg"/>
+  <h6>Mountains</h6>
+  </div>
+  </div>
+    <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/redmap.png"/>
+  <h6>Cities</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/brown_loc.png"/>
+  <h6>Villages</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/sky_loc.png"/>
+  <h6>Beaches</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Lakes</h6>
+  </div>
+  </div>
+   <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Plateaus</h6>
+  </div>
+  </div>
+   <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Gorges</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Caves</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Islets</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Sightseeings</h6>
+  </div>
+  </div>
+  
+  
+  
+  </div>
+  </ion-scroll>
+</div>
+</ion-view>

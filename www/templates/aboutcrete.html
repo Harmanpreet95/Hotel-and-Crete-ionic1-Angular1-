@@ -1,0 +1,86 @@
+<ion-view title="aboutcrete" id="page25" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title1" style="top: 11px;">{{'About_Crete' | translate}}<br/></h1>
+  
+   <button class="button button-clear icon ion-navicon pull-right" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block;"></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div ng-repeat=" About in aboutcrete" class="hotel_col" ng-if = "currentLanguage != 'Έλληνες'">
+    
+<!--  <a ng-if= "length_crete != 0"ui-sref="menu.mythology({id:About.AboutCrete.id})"><img src="{{About.AboutCrete.image}}" alt="image not found"></a>
+   <a ng-if= "length_crete == 0"  ui-sref="menu.geography"><img src="{{About.AboutCrete.image}}" alt="image not found"></a>-->
+   <div ng-click="xyz(About.AboutCrete.id,About.AboutCrete.title,$index)">
+ <a><img src="{{About.AboutCrete.image}}" alt="image not found"></a>
+  <h2 class="top_text">	{{About.AboutCrete.title}}
+</h2>
+   </div>
+  </div>
+  
+
+    <div ng-repeat=" About in aboutcrete" class="hotel_col" ng-if = "currentLanguage == 'Έλληνες'">
+    
+<!--  <a ng-if= "length_crete != 0"ui-sref="menu.mythology({id:About.AboutCrete.id})"><img src="{{About.AboutCrete.image}}" alt="image not found"></a>
+   <a ng-if= "length_crete == 0"  ui-sref="menu.geography"><img src="{{About.AboutCrete.image}}" alt="image not found"></a>-->
+   <div ng-click="xyz(About.AboutCrete.id,About.AboutCrete.title_greek,$index)">
+ <a><img src="{{About.AboutCrete.image}}" alt="image not found"></a>
+  <h2 class="top_text">	{{About.AboutCrete.title_greek}}
+</h2>
+     </div>
+  </div>
+  <!-- <div class="hotel_col">
+  <img src="img/climate.jpg" alt="image not found">
+  <h2 class="top_text">Climate</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/fauna.jpg" alt="image not found">
+  <h2 class="top_text">	Fauna</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/flora.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Flora</h2>
+  </div>
+  
+  <div class="hotel_col">
+   <a ui-sref="menu.mythology"><img src="img/mytho.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Mythology</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/econ.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Economy</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.history"><img src="img/His.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">History</h2></a>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/peo.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">People</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <a ui-sref="menu.culture"> <img src="img/cul.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Culture</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.gastronomy"><img src="img/gastro.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Gastronomy</h2>
+  </div> -->
+
+  </ion-content>
+</ion-view>
+

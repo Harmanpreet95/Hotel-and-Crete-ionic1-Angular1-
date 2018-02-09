@@ -1,0 +1,22 @@
+<ion-view title="Hotel-A" id="page22" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive btn_size ">
+  <h1 class="title">{{value.AddHotel.hotelname}}</h1>
+  
+   <a ui-sref="menu.groupname" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+<ion-content padding="false" scroll="true" class="has-header">
+<!-- 
+  <ion-content  ng-repeat=" hotel in Images " padding="false" class="has-header" style="background:url({{image}}) no-repeat; background-size:cover;"> -->
+    
+     <div   class="hotel_col">
+       <img src="{{value[0].image}}" alt="image not found">
+     </div>
+    
+   
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+<ion-view title="CHAT" id="page25" style="" hide-nav-bar="true">
+<div class="bar bar-header bar-light" style="background:url(img/register.png); box-shadow: 0px 0px 5px rgb(51, 51, 51);">
+    <button ng-click="$ionicGoBack()" class="button back-button buttons  button-clear header-item" style=""><i class="icon ion-ios-arrow-back"></i> <span class="back-text" style="transform: translate3d(0px, 0px, 0px);"><span class="default-title"></span><span class="previous-title hide"></span></span></button>
+
+  <h1 class="title"> <b>Chat</b></h1>
+</div>
+  <ion-content padding="true" style="background: url(img/bg.png) no-repeat center;background-size:cover;" class="has-header has-footer " ng-controller="menuCtrl">
+<!--    <ion-refresher
+    pulling-text="Pull to refresh..."
+    on-refresh="doRefresh()">
+  </ion-refresher>-->
+  
+
+
+    <div class="spacer" style="width: 283px; height: 0px;"></div>
+    <ul class="chat" >
+        <div ng-repeat = "allchatbuy in art">
+      <li ng-if = "allchatbuy.Chat.sender == 'Artist'">
+          <img src="{{allchatbuy.Chat.image}}" style=" max-height: 120px; max-width: 120px;">
+        <span class="item-note-msg" ng-if = "allchatbuy.Chat.msg != null"> {{allchatbuy.Chat.msg}}</span>
+        <span style="display : none;" class="item-note-msg" ng-if = "allchatbuy.Chat.msg == null"></span>
+        <!--<img src="{{allchat.Chat.image}}" style=" max-height: 50px; max-width: 50px;">-->
+      </li>
+      <li  ng-if = "allchatbuy.Chat.sender == 'Buyer'">
+          <img src="{{allchatbuy.Chat.image}}" style=" max-height: 120px; max-width: 120px;">
+        <span class="item-note-sent" ng-if = "allchatbuy.Chat.msg != null">{{allchatbuy.Chat.msg}}</span>
+        <span style="display : none;" class="item-note-msg" ng-if = "allchatbuy.Chat.msg == null"></span>
+        
+      </li>
+        </div>
+    </ul>
+  </ion-content>
+  
+    <div class="bar bar-footer chat_footer" style="background:url(img/footer_pic.png);">
+        <form name="chatformbuy" ng-submit="chatformbuy.$valid && chat_send()" novalidate>
+            <a class="button" style="background:none; color:#fff; padding:0;" ng-click="picture_send()">
+  <i class="ion-image" style="font-size: 36px !important; margin-top:2px;"> </i>
+  </a>
+  <div class="title"><input type="text" name="msg" ng-model="data.msg" style="float: left; margin: 4px 0px; width:100%; padding-left:6%;" /></div>
+  <button class="button button-small" type="submit">  Submit  </button>
+        </form>
+</div>
+</ion-view>
+

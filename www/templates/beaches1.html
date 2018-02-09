@@ -1,0 +1,82 @@
+<ion-view title="landscape" id="page53" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn" style="width:100%; float:none; display:table; padding-top: 14px;">
+  <a ng-click="$ionicGoBack()" style="color: #fff; color: #fff; width: 15%; display: table-cell; vertical-align: middle;"  class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 ng-if = "currentLanguage != 'Έλληνες'" class="title" style="width: 70%; white-space: normal; display: table-cell; line-height:normal; float: none; vertical-align: middle; text-align: center; position: static;">{{title}}</h1>
+  <h1 ng-if = "currentLanguage == 'Έλληνες'" class="title" style="width: 70%; display: table-cell; white-space: normal; line-height:normal; float: none; vertical-align: middle; text-align: center; position: static;">{{title1}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; width: 15%; display: table-cell; vertical-align: middle; line-height:32px; margin-top:5px;"></button>
+</div>
+
+  <!--<ion-header-bar align-title="center" class="bar-positive">
+  <div class="buttons">
+    <button style="color: rgb(204, 204, 204); background : none;font-size:30px;border:none;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></button>
+  </div>
+  <h1  ng-if = "currentLanguage != 'Έλληνες'" class="title">{{title}}</h1>
+  <h1  ng-if = "currentLanguage == 'Έλληνες'" class="title">{{title1}}</h1>
+  <div class="buttons">
+    <button style="color: rgb(204, 204, 204);" on-swipe-left="onSwiperight()">yt</button>
+  </div>
+</ion-header-bar>-->
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  <div ng-repeat="type in beach1" class="hotel_col1" style="height: 23vh;" ng-if = "currentLanguage != 'Έλληνες'"> 
+  <a ng-controller="beachesCtrl" ng-click="beach_info(type.id,type.latitude,type.longitude,type.description,type.title,type.image,$index)" id="groupHotel-button2" class="button button-light  button-block color_change">
+      
+      <img src="{{type.image}}" alt="image not found" width="100%">
+  </a>
+<h2 class="top_text" style="color:#fff">{{type.title}}</h2>
+  </div>
+  
+
+    <div ng-repeat="type in beach1" class="hotel_col1" style="height: 23vh;" ng-if = "currentLanguage == 'Έλληνες'"> 
+  <a ng-controller="beachesCtrl" ng-click="beach_info(type.id,type.latitude,type.longitude,type.description_greek,type.title_greek,type.image,$index)" id="groupHotel-button2" class="button button-light  button-block color_change">
+      
+      <img src="{{type.image}}" alt="image not found" width="100%">
+  </a>
+<h2 class="top_text" style="color:#fff">{{type.title_greek}}</h2>
+  </div>
+<!--  <div class="hotel_col">
+   <img src="img/land2.jpg" alt="image not found">
+  <h2 class="top_text">Plateaus</h2>
+  </div>
+  
+  <div class="hotel_col">
+<img src="img/land3.jpg" alt="image not found">
+  <h2 class="top_text">Gorges</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <img src="img/land4.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Caves</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/land5.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Lakes</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/land6.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Islets</h2>
+  </div>
+  -->
+  
+  
+  </ion-content>
+</ion-view>
+<!--<style>
+.bar{
+    height: 58px;
+}
+.bar h1{
+    height: auto;
+    white-space: normal !important;
+    height: 52px !important;
+    line-height: 25px !important;
+    /*padding-top:10px;*/
+}
+
+</style>-->

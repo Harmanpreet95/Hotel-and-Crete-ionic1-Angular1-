@@ -1,0 +1,31 @@
+<ion-view title="conatctus" id="page78" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 ng-if = "currentLanguage != 'Έλληνες'" class="title">Contact Us</h1>
+  <h1 ng-if = "currentLanguage == 'Έλληνες'" class="title">Επικοινωνήστε μαζί μας</h1>
+  
+  
+   <a style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+  <ion-content padding="true" scroll="true" class="has-header">
+
+      <div class="para_text" ng-repeat="contact in contactus">
+    <!--<p ng-if = "currentLanguage != 'Έλληνες'"> {{contact.Contact.info}}</p>-->
+    <div ng-if = "currentLanguage != 'Έλληνες'" ng-bind-html="contact.Contact.info"></div>
+      <!--<p ng-if = "currentLanguage == 'Έλληνες'"> {{contact.Contact.info_greek}}</p>-->
+     <div ng-if = "currentLanguage == 'Έλληνες'" ng-bind-html="contact.Contact.info_greek"></div>          
+    </div>
+    
+    
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>
+

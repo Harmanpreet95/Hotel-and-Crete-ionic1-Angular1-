@@ -1,0 +1,151 @@
+<ion-view title="Weather" id="page10" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive btn_size " style="">
+  <h1 class="title">Weather</h1>
+  
+   <a ui-sref="menu.groupHotel" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+
+  <ion-content padding="false" class="has-header">
+    
+    
+    
+    <div class="list"  style=" width: 95%; float: left; background-image:url(img/wall.jpg); background-size:cover;background-attachment:scroll; padding: 0; border-radius:15px;  margin-bottom:6px !important; margin-left: 8px; margin-top:8px;">
+
+    <div class="item border_item ful_fty">
+      
+      <div class="row padding1">
+      <div class="col padding1">
+        <div class="days">
+         <h4 class="mn_tp" style="margin-left: 13px;">{{today_dayy}}</h4>
+       <h3 class="height size_hgt">{{weather_dataa.temp.day | number : 0}}<sup>o</sup>c</h3>
+       </div>
+      </div>
+      
+      <div class="col padding1">
+       <div class="days pic_ds">
+             <i>
+         <img ng-src="http://openweathermap.org/img/w/{{weather_dataa.weather[0].icon}}.png">
+       </i>
+     </div>
+      </div>
+      
+      
+   
+     
+	</div>
+          <div class="day_clr">
+      <h4>{{today_date}}</h4>
+      <p>{{weather_dataa.weather[0].main}}</p>
+     </div>
+    </div>
+
+</div>
+    
+    
+    <div  ng-repeat="degree in weather_list track by $index" class="list" style=" width: 95%; float: left; background-image:url(img/wall.jpg); background-size:cover;background-attachment:scroll; padding: 16px 0; border-radius:9px;  margin-bottom:6px !important; margin-left: 8px;">
+
+    
+
+    <div class="item border_item">
+      
+      <div class="row padding1">
+      <div class="col padding1">
+       <div class="days">
+      <h4 >{{ degree.finalday }}</h4>
+      
+       </div>
+      </div>
+      
+      <div class="col padding1">
+       <div class="days">
+        <h3 class="height">{{degree.temp.day | number:0}}<sup>o</sup>c</h3>
+     </div>
+      </div>
+      
+      
+      <div class="col padding1">
+        <div class="days">
+      <!--<i class="icon ion-ios-cloud-outline"></i>-->
+       <i>
+         <img ng-src="http://openweathermap.org/img/w/{{degree.weather[0].icon}}.png">
+       </i>
+      </div>
+       </div>
+	</div>
+      
+    </div>
+
+</div>
+
+
+<!--
+<div class="list"  style=" width: 95%; float: left; background-image:url(img/wall.jpg); background-size:cover;background-attachment:scroll; padding: 24px 0;; border-radius:15px;  margin-bottom:6px !important; margin-left: 8px;">
+    
+    <div class="item border_item">
+      
+      <div class="row padding1">
+       <div class="col padding1">
+        <div class="days">
+      <h4>Wednesday</h4>
+      </div>
+       </div>
+       
+       
+      <div class="col padding1">
+      <div class="days">
+       <h3 class="height">92<sup>o</sup>c</h3>
+       </div>
+      </div>
+      
+       <div class="col padding1">
+       <div class="days">
+       <i class="icon ion-ios-sunny-outline"></i>
+     </div>
+      </div>
+	</div>
+      
+    </div>
+
+</div>
+    -->
+    <!--<div class="list"  style=" width: 95%; float: left; background-image:url(img/wall.jpg); background-size:cover;background-attachment:scroll; padding: 24px 0; border-radius:15px;  margin-bottom:6px !important; margin-left: 8px;">
+    
+    <div class="item border_item">
+      
+      <div class="row padding1">
+         <div class="col padding1">
+        <div class="days">
+      <h4>Thursday</h4>
+
+      </div>
+       </div>
+      
+      
+      <div class="col padding1">
+      <div class="days">
+       <h3 class="height">92<sup>o</sup>c</h3>
+       </div>
+      </div>
+      
+    
+      
+       <div class="col padding1">
+       <div class="days">
+       <i class="icon ion-ios-sunny-outline"></i>
+     </div>
+      </div>
+	</div>
+      
+    </div>
+
+</div>-->
+    
+   
+    
+  </ion-content>
+</ion-view>

@@ -1,0 +1,73 @@
+
+
+<ion-modal-view class="animated zoomIn">
+    <ion-header-bar>
+      <h1 class="title" style="color:#fff;">{{beach_title}}</h1>
+      <a style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" ng-click="modal.hide()" class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>
+    <ion-content>
+      <div class="image" style="background: url({{beach_image}}); background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+     
+     
+      
+    </div>
+      <div ng-app="TabsApp">
+      <div id="tabs" class="tabview" ng-controller="TabsCtrl">
+        <ul>
+          <li ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+          <div ng-include="currentTab"></div>
+        </div>
+      </div>
+      <script type="text/ng-template" id="one.tpl.html">
+    <div id="viewOne">
+                <ng-map style="height:100vh; width:100%;" draggable="true"  id="map"  center="[{{lat_beach}},{{long_beach}}]">
+                <control name="overviewMap" opened="true" />
+                    <marker  position="[{{lat_beach}},{{long_beach}}]"></marker>
+                </ng-map>
+      
+    </div>
+  </script>
+      
+      <script type="text/ng-template" id="two.tpl.html">
+    <div id="viewTwo">
+      <ng-map style="height:100vh; width:100%;">   <directions
+                        draggable="true"
+                        panel=""
+                        travel-mode=""
+                        waypoint = ""
+                        origin="{{lat_startbeach}},{{long_startbeach}}"
+                        destination="{{lat_beach}},{{long_beach}}">
+                        </directions></ng-map>
+      
+    </div>
+  </script>
+       <script type="text/ng-template" id="three.tpl.html">
+    <div id="viewTwo" ng-bind-html="beach_desc">
+    </div>
+   
+  </script>
+      
+</div>
+    
+    </ion-content>
+  </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

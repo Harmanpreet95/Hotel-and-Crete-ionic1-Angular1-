@@ -1,0 +1,91 @@
+<ion-view title="Map" id="page9" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 class="title">{{'Map'|translate}}</h1>
+   <a menu-toggle="left" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()"  class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+ <!--  <ion-content padding="true" style="background: url(img/YKw4NYAuSWWuL7RTi2NW_Untitled-8.jpg) no-repeat center;background-size:cover;" class="has-header"> -->
+  <ion-content class="has-header" padding="false" style="top:0;">
+  	<ng-map style="height:96vh; width:100%;" draggable="true"  id="map"  center="[35.2401, 24.8093]" zoom="8">
+       <marker  ng-repeat="map_list in map_details track by $index" on-click="mapclick(event,map_list.id,map_list.region,map_list.beachid)" position="[{{map_list.lat}},{{map_list.long}}]" visible="true" icon="img/brown_loc.png" >
+      </marker>
+        </ng-map>
+image,description,title,lat,long,id
+  </ion-content>
+
+  
+ <div class="bar bar-footer bar-positive" style="padding-right:36px;">
+ <ion-scroll direction="x" style="width: 100%; height: auto">
+  <div class="row" style="padding:0;">
+  
+  <div class="col" ng-repeat="list in map">
+  <div class="mountain_class" ng-click="particularcrete(list.GuideCrete.id,list.GuideCrete.title)">
+  <img src="img/redmap.png"/>
+  <h6 ng-if = "currentLanguage != 'Έλληνες'">{{list.GuideCrete.title}}</h6>
+  <h6 ng-if = "currentLanguage == 'Έλληνες'">{{list.GuideCrete.title_greek}}</h6>
+        </div>
+  </div>
+      
+<!--    <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/redmap.png"/>
+  <h6>Cities</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/brown_loc.png"/>
+  <h6>Villages</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/sky_loc.png"/>
+  <h6>Beaches</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Lakes</h6>
+  </div>
+  </div>
+   <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Plateaus</h6>
+  </div>
+  </div>
+   <div class="col col-33">
+ <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Gorges</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Caves</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Islets</h6>
+  </div>
+  </div>
+  <div class="col col-33">
+  <div class="mountain_class">
+  <img src="img/lakes_loc.png"/>
+  <h6>Sightseeings</h6>
+  </div>
+  </div>-->
+  
+  
+  
+  </div>
+  </ion-scroll>
+     <div class="swipe_finger"><img src="img/finger.png"></div>
+</div>
+</ion-view>

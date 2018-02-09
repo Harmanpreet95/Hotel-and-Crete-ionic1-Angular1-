@@ -1,0 +1,81 @@
+<!--<ion-view title="Room-a" id="page17" hide-nav-bar="true">
+
+<div ng-repeat="accomodation in accomodation1" class="bar bar-header bar-positive btn_size ">
+  <h1 class="title">{{accomodation.Accommodation.title}}</h1>
+  
+   <a ui-sref="menu.accomodation" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+    <ion-content   padding="false" class="has-header">
+      <div class="hotel_col" ng-repeat="restaurant in facility1">
+ <a> <img src="{{restaurant.Facilitie.image}}" alt="image not found"></a>
+ <h2 class="top_text" >{{restaurant.Facilitie.title | uppercase }}</h2>
+ <center><p> {{restaurant.Facilitie.description}}</p></center>
+  </div>
+      <div  ng-repeat="accomodation in accomodation1">
+
+             <div class="image_boxed">
+         <img src="{{accomodation.Accommodation.image}}" alt="image not found">
+         <h2 class="top_text" >{{accomodation.Accommodation.title}}</h2> 
+             </div>
+                <div class="image" style="background:url()  background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+             </div>
+  
+<p class="padding">{{accomodation.Accommodation.description}}</p>
+ 
+      </div>
+
+
+  <ion-content   padding="false" class="has-header">
+    <div ng-repeat="accomodation in accomodation1" class="image" style="background:url({{accomodation.Accommodation.image}}); background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+     
+     
+      
+    </div>
+    
+    
+   <div  ng-repeat="accomodation in accomodation1" class="royal_text">
+   
+   
+   <p>{{accomodation.Accommodation.description}} </p>
+   
+   </div>  
+    
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>-->
+<ion-view title="Room-a" id="page17" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive btn_size ">
+  <h1 class="title">{{value.Accommodation.title}}</h1>
+  
+   <a ui-sref="menu.accomodation" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+    <ion-content   padding="false" class="has-header">
+
+      <div  >
+
+             <div class="image_boxed">
+         <img src="{{value.Accommodation.image}}" alt="image not found">
+       <!--  <h2 class="top_text" >{{value.Accommodation.title}}</h2> -->
+             </div>
+          <h4 class="hotel_des">Description<h4>
+<p class="padding card" style="width: 92%; float: left; margin: 25px 4% !important; box-shadow: 0px 2px 10px #0c60ee; border-radius: 5px">{{value.Accommodation.description}}</p>
+ 
+      </div>
+    
+    
+    
+   
+    
+  </ion-content>
+</ion-view>

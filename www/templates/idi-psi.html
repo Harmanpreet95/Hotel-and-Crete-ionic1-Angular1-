@@ -1,0 +1,59 @@
+
+
+<ion-modal-view class="animated zoomIn">
+    <ion-header-bar>
+      <h1 class="title" style="color:#fff;">Idi - Psiloritis</h1>
+      <a style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>
+    <ion-content>
+      <div class="image" style="background: url(img/idi.jpg); background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+     
+     
+      
+    </div>
+      <div ng-app="TabsApp">
+      <div id="tabs" class="tabview" ng-controller="TabsCtrl">
+        <ul>
+          <li ng-repeat="tab in tabs" 
+                ng-class="{active:isActiveTab(tab.url)}" 
+                ng-click="onClickTab(tab)">{{tab.title}}</li>
+        </ul>
+        <div id="mainView">
+          <div ng-include="currentTab"></div>
+        </div>
+      </div>
+      <script type="text/ng-template" id="one.tpl.html">
+		<div id="viewOne">
+			<img src="img/idi-map.jpg" alt="image not found" class="museum_img">
+			
+		</div>
+	</script>
+      
+      <script type="text/ng-template" id="two.tpl.html">
+		<div id="viewTwo">
+			image of direction
+			
+		</div>
+	</script>
+      
+      
+</div>
+    
+    </ion-content>
+  </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

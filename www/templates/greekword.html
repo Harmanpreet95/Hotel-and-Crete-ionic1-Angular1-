@@ -1,0 +1,43 @@
+<ion-view title="greekword" id="page11" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive  btn_size">
+  <h1 ng-if = "currentLanguage != 'Έλληνες'" class="title">Greek Words</h1> 
+  <h1 ng-if = "currentLanguage == 'Έλληνες'" class="title">Ελληνικές λέξεις</h1> 
+   <a ng-click="$ionicGoBack()" menu-toggle="left" style="color: rgb(204, 204, 204);"   class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+
+
+
+
+
+  <ion-content padding="true" scroll="true" class="has-header">
+
+    <h4 ng-if = "currentLanguage != 'Έλληνες'">Greek Words</h4> 
+      <h4 ng-if = "currentLanguage == 'Έλληνες'">Ελληνικές λέξεις</h4> 
+    <p ng-if = "currentLanguage != 'Έλληνες'">Greek is not an easy language, but it is a beautiful one and even a brief acquaintance will give you some idea of the debt western European languages owe to it. To begin with it, the best thing is simply to say what you know the way you know it and never mind the niceties. If you worry about mistakes, you will never say anything.</p>
+    <p ng-if = "currentLanguage == 'Έλληνες'">
+Η ελληνική δεν είναι μια εύκολη γλώσσα, αλλά είναι μια όμορφη και μάλιστα μια σύντομη γνωριμία θα σας δώσει κάποια ιδέα για το χρέος των δυτικοευρωπαϊκών γλωσσών που οφείλεται σε αυτό. Αρχικά, το καλύτερο πράγμα είναι απλά να πείτε αυτό που γνωρίζετε με τον τρόπο που το γνωρίζετε και να μην σας απασχολούν οι λεπτότητες. Εάν ανησυχείτε για λάθη, ποτέ δεν θα πείτε τίποτα.</p>
+      <div class="greek_sec" ng-repeat="grek in greek" >
+          <h5 ng-if = "currentLanguage != 'Έλληνες'">{{grek.GreekWord.title}}</h5>
+           <h5 ng-if = "currentLanguage == 'Έλληνες'">{{grek.GreekWord.title_greek}}</h5>
+          <p ng-bind-html="greek.description"> </p>
+          
+      
+    
+    
+      <div class="table_outer" >
+   
+    <table cellpadding="5" class="table_sec" style="width: 100%;" >
+        <tr ng-repeat="gre in grek.GreekDescription">
+       <td>{{gre.english}}</td>
+       <td>{{gre.greek}}</td> 
+       <td>{{gre.pronunciation}}</td>
+     </tr>
+
+   </table>
+</div>
+  </div>  
+   
+    
+  </ion-content>
+</ion-view>

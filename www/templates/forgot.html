@@ -1,0 +1,34 @@
+<ion-view title="login" hide-nav-bar="true" id="page2">
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{'Forgot_Password' | translate}}</h1>
+   <!--<button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>-->
+</div>
+
+  <ion-content padding="true" class="manual-ios-statusbar-padding" style="background:url(img/register_bg.jpg) no-repeat; background-size:cover;">
+  
+  <div>
+      <img src="img/Untitled-1.png" style="display: block; width: 34%; height: auto; margin-top:40%; margin-left: auto; margin-right: auto;">
+    </div>
+    <h4 id="home-heading4" style="color:#434242;text-align:center;">{{'Hotel' | translate}}</h4>
+    
+    <div class="spacer" style="width:100%; height:6vh;"></div>
+    
+     <form id="login-form2" name="forgot" class="list register_form" ng-submit="submitted && forgot.$valid && forgot_password()" novalidate>
+    <div class="list ">
+        <div>
+  <label class="item item-input option_class">
+    <input type="email" name="email" placeholder="{{'Enter_your_Email' | translate}}"  ng-model="data.email" required="" >
+  </label>
+        <span ng-show="submitted && forgot.email.$error.required ">{{'This_field_is_required' | translate}}</span>
+        </div>
+    
+        <button type="submit" id="home-button4" class="button button-positive button-block" ng-click="submitted=true">{{'Submit' | translate}}</button>
+         <div class="spacer" style="width:100%; float: left; height: 2vh;"></div>
+<!-- <div class="button_txt" id="step1-button5" style="text-align:center;">New here ? <span><a ui-sref="menu.login" href="#/side-menu21/createProfile" style="color: #19577e; text-decoration:none;">Sign Up</a></span></div>-->
+
+</div>
+        </form>
+  </ion-content>
+</ion-view>

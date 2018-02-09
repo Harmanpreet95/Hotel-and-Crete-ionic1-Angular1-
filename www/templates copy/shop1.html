@@ -1,0 +1,63 @@
+
+
+<ion-modal-view class="animated zoomIn">
+    <ion-header-bar>
+      <h1 class="title" style="color:#fff;">{{singledetail.title}}</h1>
+      <a style="color: rgb(204, 204, 204);" ng-click="modal.hide()" class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <div class="image" style="{{singledetail.image}}; background-size:cover; display: block; width: 100%; height: 46vh; margin-left: auto; margin-right: auto;">
+     <a ><img src="{{singledetail.image}}" alt="image not found"></a>
+     
+      
+    </div>
+      <div>
+<!--          <div class="row"   ng-controller="mappageCtrl">
+              <div class="col-col-50"><a ng-click="shop_map()">Map</a></div>  
+              
+              <div class="col-col-50"><a ng-click="launchNavigator()">direction</a></div>
+          </div>     
+          -->
+          
+    <div class=" btn_content" ng-controller="mappageCtrl">
+       <a ng-click="shop_map()">Map</a>
+       <a ng-click="launchNavigator()">direction</a>
+  
+    </div>
+          
+     
+      
+<!--		<div id="viewOne">
+			<img src="{{singledetail.image}}" alt="image not found" class="museum_img">
+			
+		</div>-->
+	
+<!--      
+      <script type="text/ng-template" id="two.tpl.html">
+		<div id="viewTwo">
+			image of direction
+			
+		</div>
+	</script>
+      -->
+      
+</div>
+    
+    </ion-content>
+  </ion-modal-view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

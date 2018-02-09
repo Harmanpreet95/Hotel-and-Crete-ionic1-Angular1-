@@ -1,0 +1,31 @@
+<ion-view title="guidetocrete" id="page39" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a ng-click="$ionicGoBack()" style="color: #fff;" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{town_head}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  <ion-content padding="false" scroll="true" class="has-header" >
+      <div class="townvillage">
+        
+          <a ui-sref="menu.est">
+           <h4>{{'East_Crete' |translate}}</h4>
+             
+             <img src="img/west.jpg">
+          </a>
+          
+      </div>
+      <div class="townvillage">
+          <a ui-sref="menu.west">
+                <h4>{{'West_Crete' |translate}}</h4>
+              
+               <img src="img/east.jpg">
+          </a>
+         
+      </div>
+  </ion-content>
+</ion-view>
+

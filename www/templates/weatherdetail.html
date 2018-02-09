@@ -1,0 +1,40 @@
+<ion-view title="Weather" id="page10" hide-nav-bar="true">
+
+<!--<div class="bar bar-header bar-positive btn_size ">
+  <h1 class="title">{{today_day}}</h1>
+  
+  <div class="button">
+   <a menu-toggle="left" style="color: rgb(204, 204, 204);" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-close-empty"></a>
+</div>
+</div>-->
+
+    <ion-header-bar>
+     <h1 style="color:#fff;" class="title">{{today_day}}</h1>
+      <a ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204);"  class="button button-icon icon ion-ios-close-empty"></a>
+    </ion-header-bar>
+
+
+
+
+
+
+  <ion-content padding="false" class="has-header">
+
+    
+
+<ul class="list"  >
+    <li class="item item-divider" style="text-align: center;">
+      <i ><img ng-src="http://openweathermap.org/img/w/{{weatherdata.weather[0].icon}}.png"></i>
+    </li>
+    <li class="item">
+        Morning  <div style="float: right;">{{weatherdata.temp.day}}<sup>o</sup>c</div>
+    </li>
+    <li class="item">
+        Evening  <div style="float: right;">{{weatherdata.temp.eve}}<sup>o</sup>c</div>
+    </li>
+    <li class="item">
+        Night <div style="float: right;">{{weatherdata.temp.night}}<sup>o</sup>c</div>
+    </li>
+</ul>
+  </ion-content>
+</ion-view>

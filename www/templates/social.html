@@ -1,0 +1,26 @@
+<ion-view title="Social" id="page77" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{'Social_Media' | translate}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="true" scroll="false" style="background:url(img/social_back.jpg) no-repeat center;background-size:cover;" class="has-header">
+  <div class="spacer" style="width:100%; float:left; height:18vh;"  ></div>
+    
+  <a  ng-if = "currentLanguage != 'Έλληνες'" ng-click="openBrowser(social.Social.link)" ng-repeat="social in socials"  id="groupHotel-button2" class="button button-light  button-block color_change">{{social.Social.title}}</a>
+    <a ng-if = "currentLanguage == 'Έλληνες'" ng-click="openBrowser(social.Social.link)" ng-repeat="social in socials"  id="groupHotel-button2" class="button button-light  button-block color_change">{{social.Social.title_greek}}</a>
+<!--    <a id="groupHotel-button5" class="button button-light  button-block color_change">{{social.Social.title}}</a>
+    <a id="groupHotel-button6" class="button button-light  button-block color_change">Instagram</a>
+    <a id="groupHotel-button6" class="button button-light  button-block color_change">Youtube</a>
+    <a id="groupHotel-button6" class="button button-light  button-block color_change">Trripadvisor</a>
+    <a id="groupHotel-button6" class="button button-light  button-block color_change">Holidaycheck</a>-->
+
+  </ion-content>
+</ion-view>

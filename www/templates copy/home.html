@@ -1,0 +1,68 @@
+<ion-view title="Home" hide-nav-bar="true" id="page1">
+  <ion-content padding="true" class="manual-ios-statusbar-padding" style="background:url(img/register_bg.jpg) no-repeat; background-size:cover;">
+    <div>
+      <img src="img/Untitled-1.png" style="display: block; width: 25%; height: auto; margin-top:60px; margin-left: auto; margin-right: auto;">
+    </div>
+    <h4 id="home-heading4" style="color:#434242;text-align:center;">Hotel</h4>
+<!--    <h3 id="home-heading5" style="color:#0F4A6F;text-align:center; margin-bottom: 0px;">Register</h3>-->
+    <div id="home-markdown2" style="text-align:center;" class="show-list-numbers-and-dots">
+      <p style="color:#838383; margin-top:0px;">Please Use Latin  Characters </p>
+    </div>
+    <form id="home-form2" name="registration" class="list register_form" ng-submit="submitted && registration.$valid && registerUser()" novalidate>
+        <div>
+        <label class="item item-input" id="home-input6">
+          <input type="text" ng-pattern ="/^[a-zA-Z\s]*$/" name="pname" placeholder="Reservation Name"  ng-model="data.username" required="">
+          </label>
+            <span ng-show="submitted && registration.pname.$error.required ">This field is required</span>
+             <span ng-show="submitted && registration.pname.$error.required ">Use only alphabets</span>
+        </div>
+       <div>
+      <label class="item item-input" id="home-input8">
+          <input type="text" name="code"  placeholder="Code" ng-model="data.code"  ng-pattern="/^[a-zA-Z0-9]*$/" required="" >
+         
+      </label>
+           <span ng-show="submitted && registration.code.$error.required ">This field is required</span>
+           
+        </div>
+        <div>
+      <label class="item item-input" id="home-input9">
+          <input type="text" name="roomnumber"  placeholder="Room Number" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.roomnumber" required="">
+      </label>
+            <span ng-show="submitted && registration.roomnumber.$error.required">This field is required</span>
+           
+        </div>
+<!--        <div>
+      <label class="item item-input" id="home-input10">
+        <input type="text" name="nationality" placeholder="Nationality" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.nationality" required="">
+      </label>
+            <span ng-show="submitted && registration.nationality.$error.required">This field is required</span>
+            
+        </div>-->
+        <div>
+      <label class="item item-input" id="home-input11">
+          <input type="email" name="email" placeholder="Email" ng-model="data.email" required="">
+      </label>
+           <span ng-show="registration.email.$touched && registration.email.$invalid" >Invalid Email</span>
+        </div>
+        <div>
+            <label class="item item-input" id="home-input13">
+        <input type="password" name="password" placeholder="Password" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.password" required="">
+      </label>
+             <span ng-show="submitted && registration.password.$error.required">This field is required</span>
+             </div>
+        <div>
+            <label class="item item-input" id="home-input14">
+        <input type="password" name="cpassword" placeholder="Confirm Password" ng-pattern="/^[a-zA-Z0-9]*$/" ng-model="data.cpassword" required="">
+      </label>
+             <span ng-show="submitted && registration.cpassword.$error.required">This field is required</span>
+             </div>
+        <button type="submit" id="home-button4" class="button button-positive  button-block" ng-click="submitted=true">Register</button>
+      <div class="button_txt" id="step1-button5" style="text-align:center;">Already have an Account? <span><a ui-sref="menu.login" href="#/side-menu21/login" style="color: #19577e; text-decoration:none;">Login</a></span></div>
+
+    
+    </form>
+    
+    <div class="spacer" style="width:100%; float: left; height: 4vh;"></div>
+    
+  </ion-content>
+</ion-view>

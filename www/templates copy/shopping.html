@@ -1,0 +1,44 @@
+<ion-view title="cities" id="page80" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">Shopping</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-repeat="shopname in shop" ng-click="single_crete(shopname.GuideShopping.id)">
+  <a ng-click="modal.show()"><img src="{{shopname.GuideShopping.image}}" alt="image not found"></a>
+  <h2 class="top_text">{{shopname.GuideShopping.title}}</h2>
+  </div>
+  
+<!--  <div class="hotel_col">
+    <a ui-sref="menu.chania"><img src="img/chania.jpg" alt="image not found"></a>
+  <h2 class="top_text">	Shop 2</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.rethymno"><img src="img/rethymo.jpg" alt="image not found"></a>
+  <h2 class="top_text">Shop 3</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <a ui-sref="menu.sitia"><img src="img/scape.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Shop 4</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.agios"><img src="img/agios.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">	Shop 5</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <a ui-sref="menu.ieraperta"><img src="img/iera.jpg" alt="image not found" height="auto" width="100%"></a>
+  <h2 class="top_text">Shop 6</h2>
+  </div>-->
+  
+  </ion-content>
+</ion-view>
+

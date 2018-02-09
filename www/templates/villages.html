@@ -1,0 +1,74 @@
+<ion-view title="cities" id="page40" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+<h1 ng-if = "currentLanguage != 'Έλληνες'" class="title">{{east.GuideVillage.title}}</h1>
+<h1 ng-if = "currentLanguage == 'Έλληνες'" class="title">{{east.GuideVillage.title_greek}}</h1>
+
+
+ <a ng-click="$ionicGoBack()" style="color: rgb(204, 204, 204);" ng-click="modal.hide()" class="button button-icon icon ion-ios-close-empty"></a>
+  
+  
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+
+ <!--<ion-slide-box disable-side-menu-drag=""  slider="slider1" delegate-handle="slider1" id="preferance-slider1" style="width:100%;height:250px;">
+<!--  <ion-slide-page ng-repeat="about in abouthotel" id="preferance-slide24" style="background:url({{about.About.image}}) no-repeat center;background-size:cover;"></ion-slide-page>-->
+ 
+<!--<ion-slide ng-repeat="vill_image in village_image"  id="preferance-slide25">
+  <img src="{{vill_image}}">
+</ion-slide>
+    
+    </ion-slide-box>-->
+
+
+
+ <ion-slides disable-side-menu-drag=""  slider="slider1" delegate-handle="slider1" id="preferance-slider1" style="width:100%;height:250px;">
+<!--  <ion-slide-page ng-repeat="about in abouthotel" id="preferance-slide24" style="background:url({{about.About.image}}) no-repeat center;background-size:cover;"></ion-slide-page>-->
+ 
+	 <ion-slide-page ng-repeat="vill_image in village_image"  id="preferance-slide25" >
+     <img src= "{{vill_image}}">
+   </ion-slide-page>
+     
+    </ion-slides>
+
+
+
+
+
+
+  <div class="hotel_col2" ng-if = "currentLanguage != 'Έλληνες'">
+  <!--<img src="{{east.GuideVillage.image}}" alt="image not found">-->
+  <h2  class="top_text" style="color:#fff;">{{east.GuideVillage.title}}</h2>
+  </div>
+
+   <div class="hotel_col2" ng-if = "currentLanguage == 'Έλληνες'">
+  <!--<img src="{{east.GuideVillage.image}}" alt="image not found">-->
+  <h2  class="top_text" style="color:#fff;">{{east.GuideVillage.title_greek}}</h2>
+  </div>
+  
+
+  <div class="button-bar">
+  <a class="button" ui-sref="menu.heramapVillage({lat : east.GuideVillage.latitude, long : east.GuideVillage.longitude})">{{'Map' | translate}}</a>
+  <a class="button" ng-click="launchNavigator()">{{'Direction' | translate}}</a>
+  
+</div>
+<div class="padding" ng-if = "currentLanguage != 'Έλληνες'">
+<!--<p>{{east.GuideVillage.description}}</p>-->
+<div ng-bind-html="east.GuideVillage.description"></div>
+</div>
+
+<div class="padding" ng-if = "currentLanguage == 'Έλληνες'">
+<!--<p>{{east.GuideVillage.description_greek}}</p>-->
+<div ng-bind-html="east.GuideVillage.description_greek"></div>
+</div>
+
+
+  </ion-content>
+</ion-view>
+

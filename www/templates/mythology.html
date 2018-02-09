@@ -1,0 +1,24 @@
+<ion-view title="mythology" id="page27" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a ng-click="$ionicGoBack()" style="color: #fff;"  class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{title}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="true" scroll="true" style="background: url(img/mythback.jpg) no-repeat center;background-size:cover;" class="has-header">
+  <div class="spacer" style="width:100%; float:left; height:18vh;"> </div>
+  <div ng-repeat = "crete in details " ng-if = "currentLanguage != 'Έλληνες'">
+    <a ng-click="detailpage(crete.title,crete.description,crete.id,$index)" id="groupHotel-button2" class="button button-light  button-block color_change">{{crete.title}}</a>
+  </div>
+
+    <div ng-repeat = "crete in details" ng-if = "currentLanguage == 'Έλληνες'">
+    <a ng-click="detailpage(crete.title_greek,crete.description_greek,crete.id,$index)" id="groupHotel-button2" class="button button-light  button-block color_change">{{crete.title_greek}}</a>
+  </div>
+  </ion-content>
+</ion-view>

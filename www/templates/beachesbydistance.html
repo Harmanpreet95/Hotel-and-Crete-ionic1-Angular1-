@@ -1,0 +1,50 @@
+<ion-view title="beachesbydistance" id="page52" hide-nav-bar="true">
+
+    <div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{title_bytype}}</h1>
+<!--  <h1 ng-if="searchbyname == 0" class="title">Beaches</h1>-->
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-repeat="beachtype in guidebeach track by $index" ng-if = "currentLanguage != 'Έλληνες'">
+  <a ng-click="beach_desc(beachtype.GuideBeache.guidedataid,$index)"><img src="{{beachtype.GuideBeache.image}}" alt="image not found"></a>
+  <h2 class="top_text">{{beachtype.GuideBeache.title}}</h2>
+  </div>
+    
+  <div class="hotel_col" ng-repeat="beachtype in guidebeach" ng-if = "currentLanguage == 'Έλληνες'">
+  <a ng-click="beach_desc(beachtype.GuideBeache.guidedataid,$index)"><img src="{{beachtype.GuideBeache.image}}" alt="image not found"></a>
+  <h2 class="top_text">{{beachtype.GuideBeache.title_greek}}</h2>
+  </div>
+<!--  <div class="hotel_col">
+  <img src="img/beach2.jpg" alt="image not found">
+  <h2 class="top_text">2nd Nearest</h2>
+  </div>
+  
+  <div class="hotel_col">
+<img src="img/beach3.jpg" alt="image not found">
+  <h2 class="top_text">3rd Nearest</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <img src="img/beach4.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">4th Nearest</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/beach5.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">5th Nearest</h2>
+  </div>-->
+  
+ 
+  
+  </ion-content>
+</ion-view>
+

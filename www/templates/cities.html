@@ -1,0 +1,55 @@
+<ion-view title="cities" id="page40" hide-nav-bar="true">
+
+<div class="bar bar-header bar-positive arrow_btn">
+  <a style="color: #fff;" ng-click="$ionicGoBack()" class="button button-icon icon ion-ios-arrow-left"></a>
+   
+  <h1 class="title">{{city_title}}</h1>
+   <button class="button button-clear icon ion-navicon" menu-toggle="left" on-swipe-left="onSwiperight()" style="color:#fff; display: block; "></button>
+</div>
+
+
+  
+
+
+  <ion-content padding="false" scroll="true" class="has-header">
+  
+  <div class="hotel_col" ng-repeat = "city in villages.GuideList" ng-if = "currentLanguage != 'Έλληνες'">
+  <img ng-click="detailCity(city.image,city.description,city.title,city.latitude,city.longitude,city.id)" src="{{city.image}}" alt="image not found">
+  <h2 class="top_text" style="color:#fff;">{{city.title}}</h2>
+  </div>
+  
+
+  <div class="hotel_col" ng-repeat = "city in villages.GuideList" ng-if = "currentLanguage == 'Έλληνες'">
+  <img ng-click="detailCity(city.image,city.description_greek,city.title_greek,city.latitude,city.longitude,city.id)" src="{{city.image}}" alt="image not found">
+  <h2 class="top_text" style="color:#fff;">{{city.title_greek}}</h2>
+  </div>
+
+
+<!--  <div class="hotel_col">
+   <img src="img/chania.jpg" alt="image not found">
+  <h2 class="top_text">	Chania</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/rethymo.jpg" alt="image not found">
+  <h2 class="top_text">Rethymno</h2>
+  </div>
+  
+  <div class="hotel_col">
+ <img src="img/scape.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Sitia</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/Untitled-15.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">	Agios Nicolaos</h2>
+  </div>
+  
+  <div class="hotel_col">
+  <img src="img/museum.jpg" alt="image not found" height="auto" width="100%">
+  <h2 class="top_text">Ierapetra</h2>
+  </div>
+  -->
+  </ion-content>
+</ion-view>
+
